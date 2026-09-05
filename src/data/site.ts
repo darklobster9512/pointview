@@ -17,15 +17,20 @@ export const stats = [
   { value: "90%", label: "unserer Kunden beauftragen uns erneut" },
 ];
 
-export const clients = [
-  "Nordlicht Logistik",
-  "Hanse Medical",
-  "Elbwerk Maschinenbau",
-  "Alster Finanz",
-  "Küstenstrom Energie",
-  "Hafenkontor Trading",
-  "Baltic Software",
-  "Hummel & Söhne",
+// Platzhalter-Logos – vor Veröffentlichung durch echte Kundenlogos (mit Einverständnis) ersetzen.
+export const clients: { name: string; logo: string }[] = [
+  { name: "Siemens", logo: siemensLogo.url },
+  { name: "SAP", logo: sapLogo.url },
+  { name: "Deutsche Telekom", logo: telekomLogo.url },
+  { name: "Volkswagen", logo: volkswagenLogo.url },
+  { name: "BMW", logo: bmwLogo.url },
+  { name: "Mercedes-Benz", logo: mercedesLogo.url },
+  { name: "Bosch", logo: boschLogo.url },
+  { name: "Allianz", logo: allianzLogo.url },
+  { name: "Lufthansa", logo: lufthansaLogo.url },
+  { name: "Deutsche Bahn", logo: dbLogo.url },
+  { name: "BASF", logo: basfLogo.url },
+  { name: "adidas", logo: adidasLogo.url },
 ];
 
 export type Service = {
