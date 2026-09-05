@@ -51,7 +51,7 @@ function Page() {
       toast.error("Bitte alle Pflichtfelder ausfüllen.");
       return;
     }
-    window.fbq?.("track", "Lead");
+    (window as Window & { fbq?: (...args: unknown[]) => void }).fbq?.("track", "Lead");
     setSubmitting(true);
     try {
       const body = new FormData();
