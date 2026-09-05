@@ -107,7 +107,7 @@ export function Breadcrumb({ items }: { items: { label: string; to?: string; par
           <span aria-hidden>–</span>
           {it.to ? (
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            <Link to={it.to as any} {...(it.params ? { params: it.params } : {})} className="uppercase tracking-wide text-primary hover:underline">
+            <Link {...({ to: it.to, params: it.params } as any)} className="uppercase tracking-wide text-primary hover:underline">
               {it.label}
             </Link>
           ) : (
@@ -193,8 +193,7 @@ export function NumberedCard({
   return (
     <Link
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      to={to as any}
-      {...(params ? { params } : {})}
+      {...({ to, params } as any)}
       className="group flex h-full flex-col rounded-3xl border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-card"
     >
       <span className="text-sm font-bold text-primary">{number}</span>
