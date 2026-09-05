@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import officeImg from "@/assets/office.jpg";
-import portraitImg from "@/assets/portrait.jpg";
 import workshopImg from "@/assets/workshop.jpg";
 import {
   btn,
