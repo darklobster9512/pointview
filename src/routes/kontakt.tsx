@@ -8,8 +8,9 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/kontakt")({
   head: () =>
     pageMeta(
-      "Kontakt – PointView GmbH Hamburg",
-      "Nehmen Sie Kontakt mit der PointView GmbH auf: Elbchaussee 485, 22587 Hamburg. Kostenloses Erstgespräch zu IT-Beratung und Prozessoptimierung.",
+      "Kontakt – PointView GmbH, Elbchaussee Hamburg",
+      "Kontakt zur PointView GmbH: Elbchaussee 485, 22587 Hamburg. Kostenloses Erstgespräch zu IT-Beratung, Prozessanalyse und Prozessoptimierung anfragen.",
+      "/kontakt",
     ),
   component: Page,
 });

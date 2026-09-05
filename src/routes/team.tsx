@@ -8,8 +8,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/team")({
   head: () =>
     pageMeta(
-      "Unser Team – Beraterinnen und Berater aus Hamburg",
-      "Lernen Sie das Team der PointView GmbH kennen: erfahrene Beraterinnen und Berater für IT, Prozessanalyse und Digitalisierung.",
+      "Team – Berater für IT & Prozesse | PointView GmbH",
+      "Das Team der PointView GmbH Hamburg: erfahrene Beraterinnen und Berater für IT-Beratung, Prozessanalyse, ERP und Digitalisierung im Mittelstand.",
+      "/team",
     ),
   component: Page,
 });

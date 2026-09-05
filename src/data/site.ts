@@ -21,6 +21,7 @@ export const company = {
   register: "Amtsgericht Hamburg, HRB 88760",
   ceo: "Sven Howest",
   domain: "pointview.gmbh",
+  vatId: "", // USt-IdNr. eintragen, sobald vorhanden – wird dann automatisch im Impressum angezeigt
 };
 
 export const stats = [

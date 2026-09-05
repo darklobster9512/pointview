@@ -14,7 +14,7 @@ export const Route = createFileRoute("/karriere/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Stelle nicht gefunden" }, { name: "robots", content: "noindex" }] };
     const { job } = loaderData;
-    const base = pageMeta(`${job.title} – Job bei PointView`, job.short, `/karriere/${job.slug}`);
+    const base = pageMeta(`${job.title} – Job bei PointView Hamburg`, job.short, `/karriere/${job.slug}`);
     return {
       ...base,
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jobPosting(job)) }],

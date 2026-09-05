@@ -6,8 +6,9 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/leistungen/")({
   head: () =>
     pageMeta(
-      "Leistungen – IT-Beratung, Prozessanalyse & Optimierung",
-      "Unsere Beratungsleistungen im Überblick: IT-Beratung, Prozessanalyse, Prozessoptimierung, Digitalisierung und Softwareauswahl.",
+      "Leistungen: IT-Beratung & Prozessanalyse | PointView",
+      "Alle Leistungen der PointView GmbH Hamburg im Überblick: IT-Beratung, Prozessanalyse, Prozessoptimierung, Digitalisierung und Softwareauswahl.",
+      "/leistungen",
     ),
   component: Page,
 });

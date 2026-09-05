@@ -4,7 +4,7 @@ import { company } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/datenschutz")({
-  head: () => pageMeta("Datenschutzerklärung", "Informationen zum Datenschutz auf der Website der PointView GmbH."),
+  head: () => pageMeta("Datenschutzerklärung", "Datenschutzerklärung der PointView GmbH, Hamburg: Informationen zur Verarbeitung personenbezogener Daten auf dieser Website und Ihren Rechten.", "/datenschutz"),
   component: Page,
 });
 
@@ -14,9 +14,6 @@ function Page() {
       <PageHero breadcrumb={[{ label: "Datenschutz" }]} title="Datenschutzerklärung" subtitle="Informationen zur Verarbeitung personenbezogener Daten auf dieser Website." cta={null} />
       <Section className="pt-0">
         <div className="max-w-2xl space-y-6 break-words leading-relaxed sm:space-y-8">
-          <div className="rounded-3xl bg-primary-soft p-6 text-sm">
-            <strong className="text-dark">Hinweis:</strong> Dieser Text ist ein Platzhalter und wird durch die finale, rechtlich geprüfte Datenschutzerklärung ersetzt.
-          </div>
           <div>
             <h2 className="text-xl font-bold text-dark">1. Verantwortlicher</h2>
             <p className="mt-2">

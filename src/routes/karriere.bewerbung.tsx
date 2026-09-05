@@ -27,8 +27,8 @@ export const Route = createFileRoute("/karriere/bewerbung")({
   },
   head: () =>
     pageMeta(
-      "Jetzt bei PointView bewerben",
-      "In unter drei Minuten bewerben: Kontaktdaten angeben, Stelle wählen, absenden. Wir melden uns kurzfristig zurück.",
+      "Jetzt bewerben | PointView GmbH",
+      "In unter drei Minuten bei der PointView GmbH Hamburg bewerben: Kontaktdaten angeben, Stelle und Anstellungsart wählen, absenden. Wir melden uns kurzfristig.",
       "/karriere/bewerbung",
     ),
   component: Page,

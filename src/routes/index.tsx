@@ -22,7 +22,8 @@ export const Route = createFileRoute("/")({
   head: () =>
     pageMeta(
       "PointView GmbH – IT-Beratung & Prozessoptimierung Hamburg",
-      "Seit 2003 beraten wir Unternehmen in IT, Internet und Prozessoptimierung. Prozessanalyse, Softwareauswahl und Digitalisierung aus Hamburg.",
+      "IT-Beratung aus Hamburg seit 2003: Prozessanalyse, Prozessoptimierung, Softwareauswahl und Digitalisierung für den Mittelstand. Jetzt Erstgespräch vereinbaren.",
+      "/",
     ),
   component: Index,
 });
