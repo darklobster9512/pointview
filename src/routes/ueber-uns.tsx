@@ -1,10 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import officeImg from "@/assets/office.jpg";
 import portraitImg from "@/assets/portrait.jpg";
 import workshopImg from "@/assets/workshop.jpg";
-import { CtaBanner, Eyebrow, H2, PageHero, Section, StatsRow } from "@/components/site/Blocks";
+import { btn, CtaBanner, Eyebrow, H2, PageHero, Section, StatsRow } from "@/components/site/Blocks";
 import { company } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/ueber-uns")({
   head: () =>
@@ -78,6 +80,9 @@ function Page() {
               „Gute Beratung erkennt man daran, dass sie sich überflüssig macht. Unser Ziel ist, dass Ihr Team die Prozesse nach dem Projekt
               selbst weiterentwickeln kann.“
             </blockquote>
+            <Link to="/team" className={cn(btn.ghost, "mt-8")}>
+              Unser Team kennenlernen <ArrowRight className="size-5" />
+            </Link>
           </div>
         </div>
       </Section>

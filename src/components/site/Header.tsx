@@ -7,8 +7,8 @@ import { Logo } from "./Logo";
 
 const navLinks = [
   { to: "/ueber-uns", label: "Über uns" },
-  { to: "/referenzen", label: "Referenzen" },
-  { to: "/blog", label: "Blog" },
+  { to: "/team", label: "Team" },
+  { to: "/karriere", label: "Karriere" },
 ] as const;
 
 export function Header() {

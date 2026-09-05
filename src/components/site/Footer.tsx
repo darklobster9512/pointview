@@ -28,8 +28,8 @@ export function Footer() {
           <h3 className="text-sm font-bold uppercase tracking-wider text-primary">Unternehmen</h3>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li><Link to="/ueber-uns" className="text-dark-foreground/80 hover:text-primary">Über uns</Link></li>
-            <li><Link to="/referenzen" className="text-dark-foreground/80 hover:text-primary">Referenzen</Link></li>
-            <li><Link to="/blog" className="text-dark-foreground/80 hover:text-primary">Blog</Link></li>
+            <li><Link to="/team" className="text-dark-foreground/80 hover:text-primary">Team</Link></li>
+            <li><Link to="/karriere" className="text-dark-foreground/80 hover:text-primary">Karriere</Link></li>
             <li><Link to="/kontakt" className="text-dark-foreground/80 hover:text-primary">Kontakt</Link></li>
             <li><Link to="/impressum" className="text-dark-foreground/80 hover:text-primary">Impressum</Link></li>
             <li><Link to="/datenschutz" className="text-dark-foreground/80 hover:text-primary">Datenschutz</Link></li>
