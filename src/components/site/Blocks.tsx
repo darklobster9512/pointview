@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 /* ---------- Buttons ---------- */
 
 const btnBase =
-  "inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold transition-all duration-200 hover:-translate-y-0.5";
+  "inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-all duration-200 hover:-translate-y-0.5 sm:w-auto sm:px-8 sm:py-4";
 
 export const btn = {
   primary: cn(btnBase, "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_12px_30px_-12px_oklch(0.70_0.15_225/0.7)]"),
@@ -58,8 +58,8 @@ export function CircuitPattern({ className }: { className?: string }) {
 export function SoftBlob() {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      <div className="absolute left-[30%] top-[-10%] size-[520px] rounded-full bg-primary/25 blur-[90px]" />
-      <div className="absolute left-[45%] top-[10%] size-[360px] rounded-full bg-accent/10 blur-[100px]" />
+      <div className="absolute left-[30%] top-[-10%] size-[320px] rounded-full bg-primary/25 blur-[70px] sm:size-[520px] sm:blur-[90px]" />
+      <div className="absolute left-[45%] top-[10%] size-[240px] rounded-full bg-accent/10 blur-[80px] sm:size-[360px] sm:blur-[100px]" />
     </div>
   );
 }
@@ -78,19 +78,19 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={cn("py-20 lg:py-28", muted && "bg-muted", className)}>
+    <section id={id} className={cn("py-14 sm:py-20 lg:py-28", muted && "bg-muted", className)}>
       <div className="container-site">{children}</div>
     </section>
   );
 }
 
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
-  return <p className={cn("mb-4 text-sm font-semibold uppercase tracking-widest text-primary", className)}>{children}</p>;
+  return <p className={cn("mb-3 text-xs font-semibold uppercase tracking-widest text-primary sm:mb-4 sm:text-sm", className)}>{children}</p>;
 }
 
 export function H2({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <h2 className={cn("text-3xl font-bold leading-[1.1] tracking-tight text-dark sm:text-4xl lg:text-5xl", className)}>
+    <h2 className={cn("text-[1.75rem] font-bold leading-[1.1] tracking-tight text-dark text-balance hyphens-auto sm:text-4xl lg:text-5xl", className)}>
       {children}
     </h2>
   );
@@ -98,20 +98,20 @@ export function H2({ children, className }: { children: ReactNode; className?: s
 
 export function Breadcrumb({ items }: { items: { label: string; to?: string; params?: Record<string, string> }[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-      <Link to="/" className="text-primary hover:underline">
+    <nav aria-label="Breadcrumb" className="flex items-center gap-2 overflow-hidden whitespace-nowrap text-sm text-muted-foreground">
+      <Link to="/" className="shrink-0 text-primary hover:underline">
         Start
       </Link>
       {items.map((it, i) => (
-        <span key={i} className="flex items-center gap-2">
-          <span aria-hidden>–</span>
+        <span key={i} className="flex min-w-0 items-center gap-2">
+          <span aria-hidden className="shrink-0">–</span>
           {it.to ? (
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            <Link {...({ to: it.to, params: it.params } as any)} className="uppercase tracking-wide text-primary hover:underline">
+            <Link {...({ to: it.to, params: it.params } as any)} className="truncate uppercase tracking-wide text-primary hover:underline">
               {it.label}
             </Link>
           ) : (
-            <span>{it.label}</span>
+            <span className="truncate">{it.label}</span>
           )}
         </span>
       ))}
@@ -135,11 +135,11 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden bg-background">
       <SoftBlob />
-      <div className="container-site relative pb-16 pt-8 lg:pb-24 lg:pt-10">
+      <div className="container-site relative pb-12 pt-6 sm:pb-16 sm:pt-8 lg:pb-24 lg:pt-10">
         {breadcrumb && <Breadcrumb items={breadcrumb} />}
-        <div className="mt-12 max-w-3xl lg:mt-16">
-          <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-dark sm:text-5xl lg:text-6xl">{title}</h1>
-          <p className="mt-6 text-lg leading-relaxed text-foreground/80 sm:text-xl">{subtitle}</p>
+        <div className="mt-8 max-w-3xl sm:mt-12 lg:mt-16">
+          <h1 className="text-[2.25rem] font-bold leading-[1.05] tracking-tight text-dark text-balance hyphens-auto sm:text-5xl lg:text-6xl">{title}</h1>
+          <p className="mt-5 text-base leading-relaxed text-foreground/80 sm:mt-6 sm:text-lg lg:text-xl">{subtitle}</p>
           {cta !== null && (
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             <Link to={(cta?.to ?? "/kontakt") as any} className={cn(btn.primary, "mt-8")}>
@@ -157,17 +157,17 @@ export function PageHero({
 export function LogoStrip({ label = "Unternehmen, die uns vertrauen" }: { label?: string }) {
   const items = [...clients, ...clients];
   return (
-    <div className="container-site relative z-10">
-      <div className="overflow-hidden rounded-full border bg-card px-6 py-6 shadow-pill">
+    <div className="relative z-10 sm:container-site">
+      <div className="overflow-hidden border-y bg-card px-0 py-5 sm:rounded-full sm:border sm:px-6 sm:py-6 sm:shadow-pill">
         <p className="sr-only">{label}</p>
-        <div className="flex w-max items-center animate-[marquee_50s_linear_infinite] gap-16 [--tw-translate-x:0]">
+        <div className="flex w-max items-center animate-[marquee_50s_linear_infinite] gap-10 sm:gap-16 [--tw-translate-x:0]">
           {items.map((c, i) => (
             <img
               key={i}
               src={c.logo}
               alt={c.name}
               loading="lazy"
-              className="h-8 w-auto max-w-[140px] shrink-0 object-contain sm:h-9"
+              className="h-7 w-auto max-w-[120px] shrink-0 object-contain sm:h-9 sm:max-w-[140px]"
             />
           ))}
         </div>
@@ -198,7 +198,7 @@ export function NumberedCard({
     <Link
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       {...({ to, params } as any)}
-      className="group flex h-full flex-col rounded-3xl border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-card"
+      className="group flex h-full flex-col rounded-3xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-card sm:p-8"
     >
       <span className="text-sm font-bold text-primary">{number}</span>
       <h3 className="mt-4 text-xl font-bold text-dark">{title}</h3>
@@ -215,11 +215,11 @@ export function NumberedCard({
 
 export function StatsRow() {
   return (
-    <ul className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+    <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-8 lg:grid-cols-4">
       {stats.map((s) => (
-        <li key={s.label} className="border-l-2 border-primary pl-5">
-          <p className="text-3xl font-bold text-dark sm:text-4xl lg:text-5xl">{s.value}</p>
-          <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
+        <li key={s.label} className="min-w-0 border-l-2 border-primary pl-4 sm:pl-5">
+          <p className="text-2xl font-bold text-dark sm:text-4xl lg:text-5xl">{s.value}</p>
+          <p className="mt-1.5 text-xs text-muted-foreground sm:mt-2 sm:text-sm">{s.label}</p>
         </li>
       ))}
     </ul>
@@ -230,9 +230,9 @@ export function StatsRow() {
 
 export function BenefitGrid({ items }: { items: { title: string; text: string }[] }) {
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
       {items.map((b) => (
-        <div key={b.title} className="rounded-3xl bg-card p-8 shadow-card">
+        <div key={b.title} className="rounded-3xl bg-card p-6 shadow-card sm:p-8">
           <span className="inline-flex size-10 items-center justify-center rounded-full bg-primary-soft text-primary">
             <Check className="size-5" />
           </span>
@@ -248,10 +248,10 @@ export function BenefitGrid({ items }: { items: { title: string; text: string }[
 
 export function ProcessSteps({ steps }: { steps: { title: string; text: string }[] }) {
   return (
-    <ol className="grid gap-x-10 gap-y-8 md:grid-cols-2">
+    <ol className="grid gap-x-10 gap-y-6 sm:gap-y-8 md:grid-cols-2">
       {steps.map((s, i) => (
-        <li key={s.title} className="flex gap-5">
-          <span className="flex size-12 shrink-0 items-center justify-center rounded-full gradient-hero text-base font-bold text-primary-foreground">
+        <li key={s.title} className="flex gap-4 sm:gap-5">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-full gradient-hero text-sm font-bold text-primary-foreground sm:size-12 sm:text-base">
             {i + 1}
           </span>
           <div>
@@ -282,14 +282,14 @@ export function CtaBanner({
   secondary?: { label: string; to: string };
 }) {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-14 sm:py-20 lg:py-28">
       <div className="container-site">
-        <div className="relative overflow-hidden rounded-[2.5rem] gradient-hero px-8 py-16 text-primary-foreground sm:px-16 lg:py-20">
-          <CircuitPattern className="text-background/30" />
+        <div className="relative overflow-hidden rounded-[1.75rem] gradient-hero px-6 py-10 text-primary-foreground sm:rounded-[2.5rem] sm:px-16 sm:py-16 lg:py-20">
+          <CircuitPattern className="hidden text-background/30 sm:block" />
           <div className="relative max-w-2xl">
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">{title}</h2>
-            <p className="mt-5 text-lg text-primary-foreground/90">{text}</p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <h2 className="text-[1.75rem] font-bold leading-tight text-balance sm:text-4xl lg:text-5xl">{title}</h2>
+            <p className="mt-4 text-base text-primary-foreground/90 sm:mt-5 sm:text-lg">{text}</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               <Link {...({ to, search } as any)} className={btn.dark}>
                 {label}

@@ -13,7 +13,7 @@ function Page() {
     <>
       <PageHero breadcrumb={[{ label: "Datenschutz" }]} title="Datenschutzerklärung" subtitle="Informationen zur Verarbeitung personenbezogener Daten auf dieser Website." cta={null} />
       <Section className="pt-0">
-        <div className="max-w-2xl space-y-8 leading-relaxed">
+        <div className="max-w-2xl space-y-6 break-words leading-relaxed sm:space-y-8">
           <div className="rounded-3xl bg-primary-soft p-6 text-sm">
             <strong className="text-dark">Hinweis:</strong> Dieser Text ist ein Platzhalter und wird durch die finale, rechtlich geprüfte Datenschutzerklärung ersetzt.
           </div>

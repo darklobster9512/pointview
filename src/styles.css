@@ -104,8 +104,18 @@
   margin-inline: auto;
   width: 100%;
   max-width: 80rem;
-  padding-inline: 1.5rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 640px) {
+    padding-inline: 1.5rem;
+  }
   @media (min-width: 1024px) {
     padding-inline: 3rem;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

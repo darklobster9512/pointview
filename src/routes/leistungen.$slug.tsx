@@ -34,14 +34,14 @@ function Page() {
       <LogoStrip />
 
       <Section>
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-12">
           <div>
             <Eyebrow>Worum es geht</Eyebrow>
             <H2>{service.title} rund um Ihr Geschäftsproblem</H2>
           </div>
           <div className="space-y-5 text-foreground/80">
             {service.intro.map((p, i) => (
-              <RichText key={i} text={p} className="text-lg" />
+              <RichText key={i} text={p} className="text-base sm:text-lg" />
             ))}
             <p className="pt-2 font-semibold text-dark">Für jedes Vorhaben prüfen wir:</p>
             <ul className="space-y-3">
@@ -61,12 +61,12 @@ function Page() {
           <Eyebrow>Wann hilft das?</Eyebrow>
           <H2>Typische Situationen, in denen wir unterstützen</H2>
         </div>
-        <div className="mt-14">
+        <div className="mt-10 sm:mt-14">
           <BenefitGrid items={service.benefits} />
         </div>
-        <div className="mt-14 flex flex-col items-start gap-4 rounded-3xl bg-card p-8 shadow-card sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xl font-bold text-dark">Kostenloses Erstgespräch vereinbaren</p>
-          <Link to="/kontakt" className={btn.primary}>
+        <div className="mt-10 flex flex-col gap-5 rounded-3xl bg-card p-6 shadow-card sm:mt-14 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+          <p className="text-lg font-bold text-dark sm:text-xl">Kostenloses Erstgespräch vereinbaren</p>
+          <Link to="/kontakt" className={cn(btn.primary, "sm:shrink-0")}>
             Kontakt aufnehmen
           </Link>
         </div>
@@ -80,7 +80,7 @@ function Page() {
             Der Umfang richtet sich nach Ihrer Situation – vom kompakten Kurz-Check bis zur mehrmonatigen Begleitung. So ist unser Vorgehen in der Regel aufgebaut:
           </p>
         </div>
-        <div className="mt-14">
+        <div className="mt-10 sm:mt-14">
           <ProcessSteps steps={service.process} />
         </div>
       </Section>
@@ -90,11 +90,11 @@ function Page() {
           <Eyebrow>Im Detail</Eyebrow>
           <H2>Unsere Leistungen im Bereich {service.title}</H2>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-2">
           {service.subservices.map((s) => (
-            <div key={s.title} className="rounded-3xl border bg-card p-8">
-              <h3 className="text-xl font-bold text-dark">{s.title}</h3>
-              <p className="mt-3 leading-relaxed text-muted-foreground">{s.text}</p>
+            <div key={s.title} className="rounded-3xl border bg-card p-6 sm:p-8">
+              <h3 className="text-lg font-bold text-dark sm:text-xl">{s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{s.text}</p>
             </div>
           ))}
         </div>
@@ -105,13 +105,13 @@ function Page() {
           <Eyebrow>Weitere Leistungen</Eyebrow>
           <H2>Das könnte Sie auch interessieren</H2>
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:mt-12 sm:grid sm:gap-6 sm:overflow-visible sm:px-0 md:grid-cols-3">
           {others.map((o) => (
             <Link
               key={o.slug}
               to="/leistungen/$slug"
               params={{ slug: o.slug }}
-              className="group rounded-3xl border p-6 transition-colors hover:border-primary/40"
+              className="group w-[78vw] max-w-xs shrink-0 snap-start rounded-3xl border bg-card p-6 transition-colors hover:border-primary/40 sm:w-auto sm:max-w-none sm:shrink"
             >
               <span className="text-xs font-bold text-primary">{o.number}</span>
               <h3 className="mt-2 text-lg font-bold text-dark">{o.title}</h3>
@@ -124,15 +124,15 @@ function Page() {
       </Section>
 
       <Section muted id="kontaktformular">
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
             <Eyebrow>Kontakt</Eyebrow>
             <H2>Sprechen wir über Ihr Vorhaben</H2>
-            <p className="mt-6 leading-relaxed text-foreground/80">
+            <p className="mt-5 leading-relaxed text-foreground/80 sm:mt-6">
               Schildern Sie uns kurz Ihre Situation. Wir melden uns innerhalb eines Werktags und schlagen einen Termin für ein unverbindliches Erstgespräch vor.
             </p>
           </div>
-          <div className={cn("rounded-[2rem] bg-card p-8 shadow-card")}>
+          <div className={cn("rounded-[1.75rem] bg-card p-5 shadow-card sm:rounded-[2rem] sm:p-8")}>
             <ContactForm />
           </div>
         </div>

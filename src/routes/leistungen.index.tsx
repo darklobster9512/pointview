@@ -33,7 +33,7 @@ function Page() {
           <Eyebrow>Leistungsportfolio</Eyebrow>
           <H2>Fünf Felder, ein Ansatz: Prozesse zuerst</H2>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <NumberedCard key={s.slug} number={s.number} title={s.title} text={s.short} to="/leistungen/$slug" params={{ slug: s.slug }} />
           ))}
@@ -44,7 +44,7 @@ function Page() {
           <Eyebrow>Unsere Arbeitsweise</Eyebrow>
           <H2>So arbeiten wir mit Ihnen</H2>
         </div>
-        <div className="mt-14">
+        <div className="mt-10 sm:mt-14">
           <ProcessSteps steps={approach} />
         </div>
       </Section>
