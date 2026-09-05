@@ -1,3 +1,16 @@
+import siemensLogo from "@/assets/logos/siemens.svg.asset.json";
+import sapLogo from "@/assets/logos/sap.svg.asset.json";
+import telekomLogo from "@/assets/logos/telekom.svg.asset.json";
+import volkswagenLogo from "@/assets/logos/volkswagen.svg.asset.json";
+import bmwLogo from "@/assets/logos/bmw.svg.asset.json";
+import mercedesLogo from "@/assets/logos/mercedes.svg.asset.json";
+import boschLogo from "@/assets/logos/bosch.svg.asset.json";
+import allianzLogo from "@/assets/logos/allianz.svg.asset.json";
+import lufthansaLogo from "@/assets/logos/lufthansa.svg.asset.json";
+import dbLogo from "@/assets/logos/db.svg.asset.json";
+import basfLogo from "@/assets/logos/basf.svg.asset.json";
+import adidasLogo from "@/assets/logos/adidas.svg.asset.json";
+
 export const company = {
   name: "PointView GmbH",
   short: "PointView",
@@ -17,15 +30,20 @@ export const stats = [
   { value: "90%", label: "unserer Kunden beauftragen uns erneut" },
 ];
 
-export const clients = [
-  "Nordlicht Logistik",
-  "Hanse Medical",
-  "Elbwerk Maschinenbau",
-  "Alster Finanz",
-  "Küstenstrom Energie",
-  "Hafenkontor Trading",
-  "Baltic Software",
-  "Hummel & Söhne",
+// Platzhalter-Logos – vor Veröffentlichung durch echte Kundenlogos (mit Einverständnis) ersetzen.
+export const clients: { name: string; logo: string }[] = [
+  { name: "Siemens", logo: siemensLogo.url },
+  { name: "SAP", logo: sapLogo.url },
+  { name: "Deutsche Telekom", logo: telekomLogo.url },
+  { name: "Volkswagen", logo: volkswagenLogo.url },
+  { name: "BMW", logo: bmwLogo.url },
+  { name: "Mercedes-Benz", logo: mercedesLogo.url },
+  { name: "Bosch", logo: boschLogo.url },
+  { name: "Allianz", logo: allianzLogo.url },
+  { name: "Lufthansa", logo: lufthansaLogo.url },
+  { name: "Deutsche Bahn", logo: dbLogo.url },
+  { name: "BASF", logo: basfLogo.url },
+  { name: "adidas", logo: adidasLogo.url },
 ];
 
 export type Service = {
