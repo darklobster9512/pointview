@@ -24,7 +24,7 @@ function Page() {
         breadcrumb={[{ label: "Karriere" }]}
         title="Karriere bei PointView"
         subtitle="Arbeiten Sie dort, wo Beratung wirklich ankommt: in kleinen Teams, direkt beim Kunden und mit Verantwortung vom ersten Tag an."
-        cta={{ label: "Offene Stellen ansehen", to: "#stellen" }}
+        cta={{ label: "Initiativ bewerben", to: "/kontakt" }}
       />
 
       <Section className="pt-0">
