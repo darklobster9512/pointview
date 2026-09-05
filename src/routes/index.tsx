@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import officeImg from "@/assets/office.jpg";
-import portraitImg from "@/assets/portrait.jpg";
 import workshopImg from "@/assets/workshop.jpg";
 import {
   btn,
@@ -152,24 +151,14 @@ function Index() {
 
       {/* Quote */}
       <Section>
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,320px)_1fr]">
-          <img
-            src={portraitImg}
-            alt={`${company.ceo}, Geschäftsführer der ${company.name}`}
-            width={768}
-            height={960}
-            loading="lazy"
-            className="mx-auto aspect-[4/5] w-64 rounded-[2rem] object-cover shadow-card lg:w-full"
-          />
-          <div>
-            <Eyebrow>Aus der Praxis</Eyebrow>
-            <blockquote className="text-2xl font-semibold leading-snug text-dark sm:text-3xl">
-              „Digitalisierung ist zuerst eine Prozessfrage. Wer versteht, wie sein Unternehmen wirklich arbeitet, trifft bessere
-              Technologieentscheidungen – und spart sich teure Umwege.“
-            </blockquote>
-            <p className="mt-6 font-bold text-dark">{company.ceo}</p>
-            <p className="text-sm text-muted-foreground">Geschäftsführer, {company.name}</p>
-          </div>
+        <div className="mx-auto max-w-3xl text-center">
+          <Eyebrow>Aus der Praxis</Eyebrow>
+          <blockquote className="text-2xl font-semibold leading-snug text-dark sm:text-3xl lg:text-4xl">
+            „Digitalisierung ist zuerst eine Prozessfrage. Wer versteht, wie sein Unternehmen wirklich arbeitet, trifft bessere
+            Technologieentscheidungen – und spart sich teure Umwege.“
+          </blockquote>
+          <p className="mt-8 font-bold text-dark">{company.ceo}</p>
+          <p className="text-sm text-muted-foreground">Geschäftsführer, {company.name}</p>
         </div>
       </Section>
 
