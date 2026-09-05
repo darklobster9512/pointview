@@ -1,15 +1,3 @@
-import ottoLogo from "@/assets/logos/otto.svg.asset.json";
-import tchiboLogo from "@/assets/logos/tchibo.svg.asset.json";
-import fielmannLogo from "@/assets/logos/fielmann.svg.asset.json";
-import beiersdorfLogo from "@/assets/logos/beiersdorf.svg.asset.json";
-import sixtLogo from "@/assets/logos/sixt.svg.asset.json";
-import rossmannLogo from "@/assets/logos/rossmann.svg.asset.json";
-import dmLogo from "@/assets/logos/dm.svg.asset.json";
-import mieleLogo from "@/assets/logos/miele.svg.asset.json";
-import hariboLogo from "@/assets/logos/haribo.svg.asset.json";
-import hornbachLogo from "@/assets/logos/hornbach.svg.asset.json";
-import datevLogo from "@/assets/logos/datev.svg.asset.json";
-import fressnapfLogo from "@/assets/logos/fressnapf.svg.asset.json";
 
 export const company = {
   name: "PointView GmbH",
@@ -35,18 +23,18 @@ export const stats = [
 
 // Platzhalter-Logos – vor Veröffentlichung durch echte Kundenlogos (mit Einverständnis) ersetzen.
 export const clients: { name: string; logo: string }[] = [
-  { name: "OTTO", logo: ottoLogo.url },
-  { name: "Tchibo", logo: tchiboLogo.url },
-  { name: "Fielmann", logo: fielmannLogo.url },
-  { name: "Beiersdorf", logo: beiersdorfLogo.url },
-  { name: "Sixt", logo: sixtLogo.url },
-  { name: "Rossmann", logo: rossmannLogo.url },
-  { name: "dm-drogerie markt", logo: dmLogo.url },
-  { name: "Miele", logo: mieleLogo.url },
-  { name: "HARIBO", logo: hariboLogo.url },
-  { name: "Hornbach", logo: hornbachLogo.url },
-  { name: "DATEV", logo: datevLogo.url },
-  { name: "Fressnapf", logo: fressnapfLogo.url },
+  { name: "OTTO", logo: "/images/logos/otto.svg" },
+  { name: "Tchibo", logo: "/images/logos/tchibo.svg" },
+  { name: "Fielmann", logo: "/images/logos/fielmann.svg" },
+  { name: "Beiersdorf", logo: "/images/logos/beiersdorf.svg" },
+  { name: "Sixt", logo: "/images/logos/sixt.svg" },
+  { name: "Rossmann", logo: "/images/logos/rossmann.svg" },
+  { name: "dm-drogerie markt", logo: "/images/logos/dm.svg" },
+  { name: "Miele", logo: "/images/logos/miele.svg" },
+  { name: "HARIBO", logo: "/images/logos/haribo.svg" },
+  { name: "Hornbach", logo: "/images/logos/hornbach.svg" },
+  { name: "DATEV", logo: "/images/logos/datev.svg" },
+  { name: "Fressnapf", logo: "/images/logos/fressnapf.svg" },
 ];
 
 export type Service = {

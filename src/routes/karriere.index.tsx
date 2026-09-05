@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Briefcase, Euro, MapPin } from "lucide-react";
-import workshopImg from "@/assets/workshop.jpg";
 import { BenefitGrid, CtaBanner, Eyebrow, H2, PageHero, ProcessSteps, Section } from "@/components/site/Blocks";
 import { applicationSteps, careerBenefits, company, jobs } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
@@ -27,7 +26,7 @@ function Page() {
 
       <Section className="pt-0">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-          <img src={workshopImg} alt="Workshop im Team der PointView GmbH" width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2rem]" />
+          <img src="/images/workshop.jpg" alt="Workshop im Team der PointView GmbH" width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2rem]" />
           <div>
             <Eyebrow>Warum PointView</Eyebrow>
             <H2>Beratung ohne Folienschlachten</H2>
