@@ -78,6 +78,9 @@ function Page() {
               „Gute Beratung erkennt man daran, dass sie sich überflüssig macht. Unser Ziel ist, dass Ihr Team die Prozesse nach dem Projekt
               selbst weiterentwickeln kann.“
             </blockquote>
+            <Link to="/team" className={cn(btn.ghost, "mt-8")}>
+              Unser Team kennenlernen <ArrowRight className="size-5" />
+            </Link>
           </div>
         </div>
       </Section>
