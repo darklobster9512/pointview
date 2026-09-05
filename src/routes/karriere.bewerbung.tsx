@@ -21,9 +21,10 @@ const employmentTypes = [
 ];
 
 export const Route = createFileRoute("/karriere/bewerbung")({
-  validateSearch: (s: Record<string, unknown>): { stelle?: string } => ({
-    stelle: typeof s.stelle === "string" && s.stelle ? s.stelle : undefined,
-  }),
+  validateSearch: (s: Record<string, unknown>): { stelle?: string } => {
+    const v = s["stelle"];
+    return typeof v === "string" && v ? { stelle: v } : {};
+  },
   head: () =>
     pageMeta(
       "Jetzt bei PointView bewerben",
