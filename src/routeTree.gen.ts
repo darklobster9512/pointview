@@ -12,10 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as ImpressumRouteImport } from './routes/impressum'
-import { Route as KarriereRouteImport } from './routes/karriere'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
+import { Route as KarriereIndexRouteImport } from './routes/karriere.index'
 import { Route as LeistungenIndexRouteImport } from './routes/leistungen.index'
 import { Route as LeistungenSlugRouteImport } from './routes/leistungen.$slug'
 
@@ -34,11 +34,6 @@ const ImpressumRoute = ImpressumRouteImport.update({
   path: '/impressum',
   getParentRoute: () => rootRouteImport,
 } as any)
-const KarriereRoute = KarriereRouteImport.update({
-  id: '/karriere',
-  path: '/karriere',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const KontaktRoute = KontaktRouteImport.update({
   id: '/kontakt',
   path: '/kontakt',
@@ -52,6 +47,11 @@ const TeamRoute = TeamRouteImport.update({
 const UeberUnsRoute = UeberUnsRouteImport.update({
   id: '/ueber-uns',
   path: '/ueber-uns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KarriereIndexRoute = KarriereIndexRouteImport.update({
+  id: '/karriere/',
+  path: '/karriere/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeistungenIndexRoute = LeistungenIndexRouteImport.update({
@@ -69,22 +69,22 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
-  '/karriere': typeof KarriereRoute
   '/kontakt': typeof KontaktRoute
   '/team': typeof TeamRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
+  '/karriere/': typeof KarriereIndexRoute
   '/leistungen/': typeof LeistungenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
-  '/karriere': typeof KarriereRoute
   '/kontakt': typeof KontaktRoute
   '/team': typeof TeamRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
+  '/karriere': typeof KarriereIndexRoute
   '/leistungen': typeof LeistungenIndexRoute
 }
 export interface FileRoutesById {
@@ -92,11 +92,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
-  '/karriere': typeof KarriereRoute
   '/kontakt': typeof KontaktRoute
   '/team': typeof TeamRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
+  '/karriere/': typeof KarriereIndexRoute
   '/leistungen/': typeof LeistungenIndexRoute
 }
 export interface FileRouteTypes {
@@ -105,33 +105,33 @@ export interface FileRouteTypes {
     | '/'
     | '/datenschutz'
     | '/impressum'
-    | '/karriere'
     | '/kontakt'
     | '/team'
     | '/ueber-uns'
     | '/leistungen/$slug'
+    | '/karriere/'
     | '/leistungen/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/datenschutz'
     | '/impressum'
-    | '/karriere'
     | '/kontakt'
     | '/team'
     | '/ueber-uns'
     | '/leistungen/$slug'
+    | '/karriere'
     | '/leistungen'
   id:
     | '__root__'
     | '/'
     | '/datenschutz'
     | '/impressum'
-    | '/karriere'
     | '/kontakt'
     | '/team'
     | '/ueber-uns'
     | '/leistungen/$slug'
+    | '/karriere/'
     | '/leistungen/'
   fileRoutesById: FileRoutesById
 }
@@ -139,11 +139,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DatenschutzRoute: typeof DatenschutzRoute
   ImpressumRoute: typeof ImpressumRoute
-  KarriereRoute: typeof KarriereRoute
   KontaktRoute: typeof KontaktRoute
   TeamRoute: typeof TeamRoute
   UeberUnsRoute: typeof UeberUnsRoute
   LeistungenSlugRoute: typeof LeistungenSlugRoute
+  KarriereIndexRoute: typeof KarriereIndexRoute
   LeistungenIndexRoute: typeof LeistungenIndexRoute
 }
 
@@ -170,13 +170,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImpressumRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/karriere': {
-      id: '/karriere'
-      path: '/karriere'
-      fullPath: '/karriere'
-      preLoaderRoute: typeof KarriereRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/kontakt': {
       id: '/kontakt'
       path: '/kontakt'
@@ -196,6 +189,13 @@ declare module '@tanstack/react-router' {
       path: '/ueber-uns'
       fullPath: '/ueber-uns'
       preLoaderRoute: typeof UeberUnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/karriere/': {
+      id: '/karriere/'
+      path: '/karriere'
+      fullPath: '/karriere/'
+      preLoaderRoute: typeof KarriereIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leistungen/': {
@@ -219,11 +219,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DatenschutzRoute: DatenschutzRoute,
   ImpressumRoute: ImpressumRoute,
-  KarriereRoute: KarriereRoute,
   KontaktRoute: KontaktRoute,
   TeamRoute: TeamRoute,
   UeberUnsRoute: UeberUnsRoute,
   LeistungenSlugRoute: LeistungenSlugRoute,
+  KarriereIndexRoute: KarriereIndexRoute,
   LeistungenIndexRoute: LeistungenIndexRoute,
 }
 export const routeTree = rootRouteImport

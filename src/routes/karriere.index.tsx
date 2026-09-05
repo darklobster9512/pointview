@@ -6,7 +6,7 @@ import { applicationSteps, careerBenefits, company, jobs } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/karriere")({
+export const Route = createFileRoute("/karriere/")({
   head: () =>
     pageMeta(
       "Karriere – Jobs in IT-Beratung & Prozessoptimierung in Hamburg",
