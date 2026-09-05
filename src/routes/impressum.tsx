@@ -4,7 +4,7 @@ import { company } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/impressum")({
-  head: () => pageMeta("Impressum", "Impressum und Pflichtangaben der PointView GmbH, Hamburg."),
+  head: () => pageMeta("Impressum", "Impressum der PointView GmbH, Elbchaussee 485, 22587 Hamburg: Geschäftsführung, Handelsregister und Kontakt der IT- und Prozessberatung.", "/impressum"),
   component: Page,
 });
 
@@ -48,10 +48,12 @@ function Page() {
             <h2 className="text-xl font-bold text-dark">Unternehmensgegenstand</h2>
             <p className="mt-2">Die Beratung von Unternehmen im Bereich EDV und Internet.</p>
           </div>
-          <div>
-            <h2 className="text-xl font-bold text-dark">Umsatzsteuer-ID</h2>
-            <p className="mt-2 text-muted-foreground">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [wird nachgereicht]</p>
-          </div>
+          {company.vatId ? (
+            <div>
+              <h2 className="text-xl font-bold text-dark">Umsatzsteuer-ID</h2>
+              <p className="mt-2">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: {company.vatId}</p>
+            </div>
+          ) : null}
           <div>
             <h2 className="text-xl font-bold text-dark">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
             <p className="mt-2">
