@@ -32,18 +32,18 @@ export const stats = [
 
 // Platzhalter-Logos – vor Veröffentlichung durch echte Kundenlogos (mit Einverständnis) ersetzen.
 export const clients: { name: string; logo: string }[] = [
-  { name: "Siemens", logo: siemensLogo.url },
-  { name: "SAP", logo: sapLogo.url },
-  { name: "Deutsche Telekom", logo: telekomLogo.url },
-  { name: "Volkswagen", logo: volkswagenLogo.url },
-  { name: "BMW", logo: bmwLogo.url },
-  { name: "Mercedes-Benz", logo: mercedesLogo.url },
-  { name: "Bosch", logo: boschLogo.url },
-  { name: "Allianz", logo: allianzLogo.url },
-  { name: "Lufthansa", logo: lufthansaLogo.url },
-  { name: "Deutsche Bahn", logo: dbLogo.url },
-  { name: "BASF", logo: basfLogo.url },
-  { name: "adidas", logo: adidasLogo.url },
+  { name: "OTTO", logo: ottoLogo.url },
+  { name: "Tchibo", logo: tchiboLogo.url },
+  { name: "Fielmann", logo: fielmannLogo.url },
+  { name: "Beiersdorf", logo: beiersdorfLogo.url },
+  { name: "Sixt", logo: sixtLogo.url },
+  { name: "Rossmann", logo: rossmannLogo.url },
+  { name: "dm-drogerie markt", logo: dmLogo.url },
+  { name: "Miele", logo: mieleLogo.url },
+  { name: "HARIBO", logo: hariboLogo.url },
+  { name: "Hornbach", logo: hornbachLogo.url },
+  { name: "DATEV", logo: datevLogo.url },
+  { name: "Fressnapf", logo: fressnapfLogo.url },
 ];
 
 export type Service = {
