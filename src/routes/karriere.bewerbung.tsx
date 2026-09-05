@@ -3,7 +3,7 @@ import { Loader2, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
 import { btn, PageHero } from "@/components/site/Blocks";
-import { jobs } from "@/data/site";
+import { jobs, type EmploymentType } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
@@ -13,7 +13,7 @@ const API_URL = "https://laozvnaupdecerpvwzmh.supabase.co/functions/v1/submit-ap
 const ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxhb3p2bmF1cGRlY2VycHZ3em1oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3NzEwNjUsImV4cCI6MjA5NDM0NzA2NX0.uXLnpeKILEDBoC8yCcX1ZL-hdlhFPUl-bVYcoxHKu2Y";
 
-const employmentTypes = [
+const employmentTypes: { value: EmploymentType; label: string }[] = [
   { value: "vollzeit", label: "Vollzeit" },
   { value: "teilzeit", label: "Teilzeit" },
   { value: "minijob", label: "Minijob" },
@@ -41,6 +41,17 @@ function Page() {
   const { stelle } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
   const [formKey, setFormKey] = useState(0);
+  const [position, setPosition] = useState(stelle ?? "");
+  const job = jobs.find((j) => j.title === position);
+  const allowed = job ? employmentTypes.filter((t) => job.employmentTypes.includes(t.value)) : employmentTypes;
+  const [employment, setEmployment] = useState<string>(allowed.length === 1 ? allowed[0]!.value : "");
+
+  function onPositionChange(title: string) {
+    setPosition(title);
+    const j = jobs.find((x) => x.title === title);
+    const next = j ? employmentTypes.filter((t) => j.employmentTypes.includes(t.value)) : employmentTypes;
+    setEmployment(next.length === 1 ? next[0]!.value : next.some((t) => t.value === employment) ? employment : "");
+  }
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -71,6 +82,8 @@ function Page() {
       if (!data.success) throw new Error(data.error || "Unbekannter Fehler");
       toast.success("Bewerbung gesendet.", { description: "Wir melden uns innerhalb von 48 Stunden." });
       setFormKey((k) => k + 1);
+      setPosition("");
+      setEmployment("");
     } catch (err) {
       toast.error("Übermittlung fehlgeschlagen", {
         description: err instanceof Error ? err.message : "Bitte später erneut versuchen oder direkt per E-Mail.",
@@ -110,7 +123,7 @@ function Page() {
             </label>
             <label className="block sm:col-span-2">
               <span className="mb-2 block text-sm font-semibold text-dark">Stelle</span>
-              <select name="stelle" defaultValue={stelle ?? ""} className={field}>
+              <select name="stelle" value={position} onChange={(e) => onPositionChange(e.target.value)} className={field}>
                 <option value="">Bitte wählen</option>
                 {jobs.map((j) => (
                   <option key={j.slug} value={j.title}>{j.title}</option>
@@ -119,9 +132,9 @@ function Page() {
             </label>
             <label className="block sm:col-span-2">
               <span className="mb-2 block text-sm font-semibold text-dark">Anstellungsart *</span>
-              <select required name="anstellungsart" defaultValue="" className={field}>
+              <select required name="anstellungsart" value={employment} onChange={(e) => setEmployment(e.target.value)} className={field}>
                 <option value="" disabled>Bitte wählen</option>
-                {employmentTypes.map((t) => (
+                {allowed.map((t) => (
                   <option key={t.value} value={t.value}>{t.label}</option>
                 ))}
               </select>

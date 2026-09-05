@@ -333,12 +333,15 @@ export const careerBenefits = [
   { title: "Moderne Ausstattung", text: "Notebook und Smartphone Ihrer Wahl, ergonomischer Arbeitsplatz, aktuelle Tools." },
 ];
 
+export type EmploymentType = "vollzeit" | "teilzeit" | "minijob" | "werkstudium";
+
 export type Job = {
   slug: string;
   title: string;
   area: string;
   location: string;
   model: string;
+  employmentTypes: EmploymentType[];
   hours?: string;
   salary?: string;
   status: "Sofort verfügbar" | "Bald verfügbar";
@@ -358,6 +361,7 @@ export const jobs: Job[] = [
     area: "Quality",
     location: "Remote (Deutschland)",
     model: "Minijob · Teilzeit · flexibel",
+    employmentTypes: ["minijob", "teilzeit"],
     hours: "5–25 Std./Woche, freie Einteilung",
     salary: "29 € / Stunde",
     status: "Sofort verfügbar",
@@ -391,6 +395,7 @@ export const jobs: Job[] = [
     area: "Beratung",
     location: "Hamburg / Remote",
     model: "Festanstellung · Vollzeit",
+    employmentTypes: ["vollzeit"],
     hours: "40 Std./Woche · flexibel",
     salary: "75.000 – 95.000 € / Jahr",
     status: "Sofort verfügbar",
@@ -423,6 +428,7 @@ export const jobs: Job[] = [
     area: "Beratung",
     location: "Hamburg",
     model: "Festanstellung · Voll- oder Teilzeit",
+    employmentTypes: ["vollzeit", "teilzeit"],
     hours: "32–40 Std./Woche",
     salary: "65.000 – 85.000 € / Jahr",
     status: "Sofort verfügbar",
@@ -455,6 +461,7 @@ export const jobs: Job[] = [
     area: "Beratung",
     location: "Hamburg / Remote",
     model: "Werkstudium · Teilzeit",
+    employmentTypes: ["werkstudium"],
     hours: "15–20 Std./Woche",
     salary: "18 € / Stunde",
     status: "Sofort verfügbar",
@@ -487,6 +494,7 @@ export const jobs: Job[] = [
     area: "Alle Bereiche",
     location: "Hamburg / Remote",
     model: "flexibel",
+    employmentTypes: ["vollzeit", "teilzeit", "minijob", "werkstudium"],
     status: "Sofort verfügbar",
     start: "jederzeit",
     short: "Keine passende Stelle dabei? Wenn Sie Prozesse, IT und Menschen zusammenbringen möchten, freuen wir uns auf Ihre Nachricht.",
