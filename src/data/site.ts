@@ -290,9 +290,9 @@ export const team: TeamMember[] = [
     focus: ["Projektleitung", "Vertragsprüfung", "Change Management"],
   },
   {
-    name: "Julia Petersen",
+    name: "Tobias Krüger",
     role: "Recruiting & People",
-    text: "Verantwortlich für Recruiting und Onboarding. Erste Ansprechpartnerin für Bewerberinnen und Bewerber – von der ersten Nachricht bis zum ersten Arbeitstag.",
+    text: "Verantwortlich für Recruiting und Onboarding. Erster Ansprechpartner für Bewerberinnen und Bewerber – von der ersten Nachricht bis zum ersten Arbeitstag.",
     focus: ["Recruiting", "Onboarding", "Employer Branding"],
   },
 ];
