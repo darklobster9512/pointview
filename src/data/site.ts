@@ -256,7 +256,6 @@ export type TeamMember = {
   role: string;
   text: string;
   focus: string[];
-  photo?: "portrait";
 };
 
 export const team: TeamMember[] = [
@@ -265,7 +264,6 @@ export const team: TeamMember[] = [
     role: "Geschäftsführer",
     text: "Gründer der PointView GmbH. Übersetzt technische Fragen in unternehmerische Entscheidungen und begleitet Kunden persönlich durch Analyse, Auswahl und Einführung.",
     focus: ["IT-Strategie", "Prozessoptimierung", "Softwareauswahl"],
-    photo: "portrait",
   },
   {
     name: "Katrin Lindemann",
