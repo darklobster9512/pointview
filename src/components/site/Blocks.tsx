@@ -167,7 +167,7 @@ export function LogoStrip({ label = "Unternehmen, die uns vertrauen" }: { label?
               src={c.logo}
               alt={c.name}
               loading="lazy"
-              className="h-8 w-auto max-w-[140px] shrink-0 object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:h-9"
+              className="h-8 w-auto max-w-[140px] shrink-0 object-contain sm:h-9"
             />
           ))}
         </div>

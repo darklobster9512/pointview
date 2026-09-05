@@ -1,15 +1,15 @@
-import siemensLogo from "@/assets/logos/siemens.svg.asset.json";
-import sapLogo from "@/assets/logos/sap.svg.asset.json";
-import telekomLogo from "@/assets/logos/telekom.svg.asset.json";
-import volkswagenLogo from "@/assets/logos/volkswagen.svg.asset.json";
-import bmwLogo from "@/assets/logos/bmw.svg.asset.json";
-import mercedesLogo from "@/assets/logos/mercedes.svg.asset.json";
-import boschLogo from "@/assets/logos/bosch.svg.asset.json";
-import allianzLogo from "@/assets/logos/allianz.svg.asset.json";
-import lufthansaLogo from "@/assets/logos/lufthansa.svg.asset.json";
-import dbLogo from "@/assets/logos/db.svg.asset.json";
-import basfLogo from "@/assets/logos/basf.svg.asset.json";
-import adidasLogo from "@/assets/logos/adidas.svg.asset.json";
+import ottoLogo from "@/assets/logos/otto.svg.asset.json";
+import tchiboLogo from "@/assets/logos/tchibo.svg.asset.json";
+import fielmannLogo from "@/assets/logos/fielmann.svg.asset.json";
+import beiersdorfLogo from "@/assets/logos/beiersdorf.svg.asset.json";
+import sixtLogo from "@/assets/logos/sixt.svg.asset.json";
+import rossmannLogo from "@/assets/logos/rossmann.svg.asset.json";
+import dmLogo from "@/assets/logos/dm.svg.asset.json";
+import mieleLogo from "@/assets/logos/miele.svg.asset.json";
+import hariboLogo from "@/assets/logos/haribo.svg.asset.json";
+import hornbachLogo from "@/assets/logos/hornbach.svg.asset.json";
+import datevLogo from "@/assets/logos/datev.svg.asset.json";
+import fressnapfLogo from "@/assets/logos/fressnapf.svg.asset.json";
 
 export const company = {
   name: "PointView GmbH",
@@ -32,18 +32,18 @@ export const stats = [
 
 // Platzhalter-Logos – vor Veröffentlichung durch echte Kundenlogos (mit Einverständnis) ersetzen.
 export const clients: { name: string; logo: string }[] = [
-  { name: "Siemens", logo: siemensLogo.url },
-  { name: "SAP", logo: sapLogo.url },
-  { name: "Deutsche Telekom", logo: telekomLogo.url },
-  { name: "Volkswagen", logo: volkswagenLogo.url },
-  { name: "BMW", logo: bmwLogo.url },
-  { name: "Mercedes-Benz", logo: mercedesLogo.url },
-  { name: "Bosch", logo: boschLogo.url },
-  { name: "Allianz", logo: allianzLogo.url },
-  { name: "Lufthansa", logo: lufthansaLogo.url },
-  { name: "Deutsche Bahn", logo: dbLogo.url },
-  { name: "BASF", logo: basfLogo.url },
-  { name: "adidas", logo: adidasLogo.url },
+  { name: "OTTO", logo: ottoLogo.url },
+  { name: "Tchibo", logo: tchiboLogo.url },
+  { name: "Fielmann", logo: fielmannLogo.url },
+  { name: "Beiersdorf", logo: beiersdorfLogo.url },
+  { name: "Sixt", logo: sixtLogo.url },
+  { name: "Rossmann", logo: rossmannLogo.url },
+  { name: "dm-drogerie markt", logo: dmLogo.url },
+  { name: "Miele", logo: mieleLogo.url },
+  { name: "HARIBO", logo: hariboLogo.url },
+  { name: "Hornbach", logo: hornbachLogo.url },
+  { name: "DATEV", logo: datevLogo.url },
+  { name: "Fressnapf", logo: fressnapfLogo.url },
 ];
 
 export type Service = {
