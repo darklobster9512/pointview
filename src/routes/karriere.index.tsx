@@ -8,8 +8,8 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/karriere/")({
   head: () =>
     pageMeta(
-      "Karriere – Jobs in IT-Beratung & Prozessoptimierung in Hamburg",
-      "Offene Stellen bei der PointView GmbH: Consultants, Online-Prozesstester, Projektleitung und Werkstudierende für Prozessanalyse, ERP und Digitalisierung.",
+      "Karriere & Jobs in der IT-Beratung Hamburg | PointView",
+      "Offene Stellen bei der PointView GmbH Hamburg: Consultants, Online-Prozesstester (Remote) und Werkstudierende für Prozessanalyse, ERP und Digitalisierung.",
       "/karriere",
     ),
   component: Page,

@@ -14,7 +14,7 @@ export const Route = createFileRoute("/leistungen/$slug")({
   },
   head: ({ loaderData }) =>
     loaderData
-      ? pageMeta(loaderData.service.title, loaderData.service.subtitle)
+      ? pageMeta(`${loaderData.service.title} Hamburg | PointView GmbH`, loaderData.service.subtitle, `/leistungen/${loaderData.service.slug}`)
       : { meta: [{ title: "Leistung nicht gefunden | PointView GmbH" }, { name: "robots", content: "noindex" }] },
   component: Page,
 });

@@ -11,8 +11,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/ueber-uns")({
   head: () =>
     pageMeta(
-      "Über uns – Beratung aus Hamburg seit 2003",
-      "Die PointView GmbH berät seit 2003 Unternehmen in IT, Internet und Prozessoptimierung. Lernen Sie unser Team und unsere Werte kennen.",
+      "Über uns – IT-Beratung aus Hamburg seit 2003 | PointView",
+      "Die PointView GmbH berät seit 2003 Unternehmen in IT, Internet und Prozessoptimierung. Erfahren Sie mehr über Geschichte, Werte und Arbeitsweise aus Hamburg.",
+      "/ueber-uns",
     ),
   component: Page,
 });
