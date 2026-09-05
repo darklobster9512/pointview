@@ -66,24 +66,21 @@ function Page() {
       </Section>
 
       <Section>
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,360px)_1fr]">
-          <img src={portraitImg} alt={`${company.ceo}, Geschäftsführer`} width={768} height={960} loading="lazy" className="mx-auto aspect-[4/5] w-72 rounded-[2rem] object-cover shadow-card lg:w-full" />
-          <div>
-            <Eyebrow>Geschäftsführung</Eyebrow>
-            <H2>{company.ceo}</H2>
-            <p className="mt-6 leading-relaxed text-foreground/80">
-              Sven Howest führt die {company.name} seit ihrer Gründung. Sein Schwerpunkt liegt auf der Schnittstelle zwischen Geschäftsführung,
-              Fachbereich und IT: Er übersetzt technische Fragen in unternehmerische Entscheidungen und begleitet Kunden persönlich durch
-              Analyse, Auswahl und Einführung.
-            </p>
-            <blockquote className="mt-8 border-l-4 border-primary pl-6 text-xl font-semibold leading-snug text-dark">
-              „Gute Beratung erkennt man daran, dass sie sich überflüssig macht. Unser Ziel ist, dass Ihr Team die Prozesse nach dem Projekt
-              selbst weiterentwickeln kann.“
-            </blockquote>
-            <Link to="/team" className={cn(btn.ghost, "mt-8")}>
-              Unser Team kennenlernen <ArrowRight className="size-5" />
-            </Link>
-          </div>
+        <div className="max-w-3xl">
+          <Eyebrow>Geschäftsführung</Eyebrow>
+          <H2>{company.ceo}</H2>
+          <p className="mt-6 leading-relaxed text-foreground/80">
+            Sven Howest führt die {company.name} seit ihrer Gründung. Sein Schwerpunkt liegt auf der Schnittstelle zwischen Geschäftsführung,
+            Fachbereich und IT: Er übersetzt technische Fragen in unternehmerische Entscheidungen und begleitet Kunden persönlich durch
+            Analyse, Auswahl und Einführung.
+          </p>
+          <blockquote className="mt-8 border-l-4 border-primary pl-6 text-xl font-semibold leading-snug text-dark">
+            „Gute Beratung erkennt man daran, dass sie sich überflüssig macht. Unser Ziel ist, dass Ihr Team die Prozesse nach dem Projekt
+            selbst weiterentwickeln kann.“
+          </blockquote>
+          <Link to="/team" className={cn(btn.ghost, "mt-8")}>
+            Unser Team kennenlernen <ArrowRight className="size-5" />
+          </Link>
         </div>
       </Section>
 
