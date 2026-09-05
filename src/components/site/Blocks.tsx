@@ -103,11 +103,11 @@ export function Breadcrumb({ items }: { items: { label: string; to?: string; par
         Start
       </Link>
       {items.map((it, i) => (
-        <span key={i} className="flex min-w-0 items-center gap-2">
+        <span key={i} className={cn("flex items-center gap-2", it.to ? "shrink-0" : "min-w-0")}>
           <span aria-hidden className="shrink-0">–</span>
           {it.to ? (
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            <Link {...({ to: it.to, params: it.params } as any)} className="truncate uppercase tracking-wide text-primary hover:underline">
+            <Link {...({ to: it.to, params: it.params } as any)} className="uppercase tracking-wide text-primary hover:underline">
               {it.label}
             </Link>
           ) : (
