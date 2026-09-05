@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Eyebrow, H2, PageHero, Section } from "@/components/site/Blocks";
 import { ContactForm } from "@/components/site/ContactForm";
 import { company } from "@/data/site";
@@ -38,6 +38,12 @@ function Page() {
                 </address>
               </div>
               <div className="mt-6 flex gap-4">
+                <Phone className="mt-1 size-5 shrink-0 text-primary" />
+                <a href={company.phoneHref} className="font-semibold text-dark hover:text-primary">
+                  {company.phone}
+                </a>
+              </div>
+              <div className="mt-4 flex gap-4">
                 <Mail className="mt-1 size-5 shrink-0 text-primary" />
                 <a href={`mailto:${company.email}`} className="break-all font-semibold text-dark hover:text-primary">
                   {company.email}

@@ -42,6 +42,9 @@ export function Footer() {
             <p>{company.street}</p>
             <p>{company.city}</p>
             <p className="pt-2">
+              <a href={company.phoneHref} className="hover:text-primary">{company.phone}</a>
+            </p>
+            <p>
               <a href={`mailto:${company.email}`} className="hover:text-primary">{company.email}</a>
             </p>
           </address>

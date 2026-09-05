@@ -31,6 +31,8 @@ function Page() {
           <div>
             <h2 className="text-xl font-bold text-dark">Kontakt</h2>
             <p className="mt-2">
+              Telefon: <a href={company.phoneHref} className="text-primary hover:underline">{company.phone}</a>
+              <br />
               E-Mail: <a href={`mailto:${company.email}`} className="text-primary hover:underline">{company.email}</a>
             </p>
           </div>
