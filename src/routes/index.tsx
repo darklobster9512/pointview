@@ -56,21 +56,21 @@ function Index() {
           alt="Zwei Berater der PointView GmbH arbeiten gemeinsam am Laptop"
           width={1920}
           height={1080}
-          className="absolute inset-0 size-full object-cover object-right"
+          className="absolute inset-0 size-full object-cover object-center sm:object-right"
         />
         <div className="absolute inset-0 gradient-hero opacity-85 mix-blend-multiply" />
         <div className="absolute inset-0 gradient-hero opacity-40" />
-        <CircuitPattern />
-        <div className="container-site relative py-28 lg:py-40">
+        <CircuitPattern className="hidden sm:block" />
+        <div className="container-site relative py-16 sm:py-28 lg:py-40">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-7xl">
+            <h1 className="text-[2.25rem] font-bold leading-[1.05] tracking-tight text-balance hyphens-auto sm:text-5xl lg:text-7xl">
               Ihr Partner für IT-Beratung und Prozessoptimierung
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/90 sm:text-xl">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/90 sm:mt-8 sm:text-lg lg:text-xl">
               Seit {company.since} helfen wir Unternehmen, Abläufe zu verstehen, zu vereinfachen und digital zu unterstützen.
               Herstellerneutral, praxisnah und auf messbare Ergebnisse ausgerichtet.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
               <Link to="/kontakt" className={btn.primary}>
                 Projekt besprechen
               </Link>
@@ -83,7 +83,7 @@ function Index() {
       </section>
 
       {/* Logo strip overlapping */}
-      <div className="-mt-12 bg-background pb-4">
+      <div className="bg-background pb-4 sm:-mt-12">
         <LogoStrip />
       </div>
 
@@ -93,13 +93,13 @@ function Index() {
           <Eyebrow>Was wir tun</Eyebrow>
           <H2>Beratung, die bei Ihren Abläufen anfängt</H2>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <NumberedCard key={s.slug} number={s.number} title={s.title} text={s.short} to="/leistungen/$slug" params={{ slug: s.slug }} />
           ))}
           <Link
             to="/leistungen"
-            className="group flex h-full flex-col justify-between rounded-3xl bg-dark p-8 text-dark-foreground transition-all duration-300 hover:-translate-y-1 hover:bg-accent"
+            className="group flex h-full flex-col justify-between rounded-3xl bg-dark p-6 text-dark-foreground transition-all duration-300 hover:-translate-y-1 hover:bg-accent sm:p-8"
           >
             <ArrowRight className="size-8 text-primary" />
             <div>
@@ -115,7 +115,7 @@ function Index() {
 
       {/* Who we are */}
       <Section muted>
-        <div className="grid items-center gap-14 lg:grid-cols-2">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
             <Eyebrow>Wer wir sind</Eyebrow>
             <H2>Beratungserfahrung aus über 20 Jahren – angewendet auf Ihre Prozesse</H2>
@@ -139,10 +139,10 @@ function Index() {
               width={1024}
               height={768}
               loading="lazy"
-              className="rounded-[2.5rem] object-cover shadow-card"
+              className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2.5rem]"
             />
-            <div className="absolute -bottom-6 -left-6 hidden rounded-3xl bg-card p-6 shadow-card sm:block">
-              <p className="text-3xl font-bold text-dark">seit 2003</p>
+            <div className="mt-4 inline-block rounded-3xl bg-card p-5 shadow-card sm:absolute sm:-bottom-6 sm:-left-6 sm:mt-0 sm:p-6">
+              <p className="text-2xl font-bold text-dark sm:text-3xl">seit 2003</p>
               <p className="text-sm text-muted-foreground">Elbchaussee, Hamburg</p>
             </div>
           </div>
@@ -153,7 +153,7 @@ function Index() {
       <Section>
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow>Aus der Praxis</Eyebrow>
-          <blockquote className="text-2xl font-semibold leading-snug text-dark sm:text-3xl lg:text-4xl">
+          <blockquote className="text-xl font-semibold leading-snug text-dark text-balance sm:text-3xl lg:text-4xl">
             „Digitalisierung ist zuerst eine Prozessfrage. Wer versteht, wie sein Unternehmen wirklich arbeitet, trifft bessere
             Technologieentscheidungen – und spart sich teure Umwege.“
           </blockquote>
@@ -164,13 +164,13 @@ function Index() {
 
       {/* Stats */}
       <Section muted>
-        <H2 className="mb-14">PointView in Zahlen</H2>
+        <H2 className="mb-10 sm:mb-14">PointView in Zahlen</H2>
         <StatsRow />
       </Section>
 
       {/* Quick check offer */}
       <Section>
-        <div className="grid items-center gap-14 lg:grid-cols-2">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className="order-2 lg:order-1">
             <img
               src={workshopImg}
@@ -178,7 +178,7 @@ function Index() {
               width={1024}
               height={768}
               loading="lazy"
-              className="rounded-[2.5rem] object-cover shadow-card"
+              className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2.5rem]"
             />
           </div>
           <div className="order-1 lg:order-2">
@@ -213,11 +213,11 @@ function Index() {
       {/* Why */}
       <Section>
         <H2 className="max-w-3xl">Warum Unternehmen mit PointView arbeiten</H2>
-        <div className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2">
+        <div className="mt-10 grid gap-x-12 gap-y-8 sm:mt-14 sm:gap-y-10 md:grid-cols-2">
           {reasons.map((r) => (
-            <div key={r.title} className="border-t-2 border-primary pt-6">
-              <h3 className="text-xl font-bold text-dark">{r.title}</h3>
-              <p className="mt-3 leading-relaxed text-muted-foreground">{r.text}</p>
+            <div key={r.title} className="border-t-2 border-primary pt-5 sm:pt-6">
+              <h3 className="text-lg font-bold text-dark sm:text-xl">{r.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:mt-3 sm:text-base">{r.text}</p>
             </div>
           ))}
         </div>

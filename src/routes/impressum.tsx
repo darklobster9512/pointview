@@ -13,7 +13,7 @@ function Page() {
     <>
       <PageHero breadcrumb={[{ label: "Impressum" }]} title="Impressum" subtitle="Angaben gemäß § 5 DDG" cta={null} />
       <Section className="pt-0">
-        <div className="prose-sm max-w-2xl space-y-8 leading-relaxed">
+        <div className="max-w-2xl space-y-6 break-words leading-relaxed sm:space-y-8">
           <div>
             <h2 className="text-xl font-bold text-dark">Anbieter</h2>
             <p className="mt-2">

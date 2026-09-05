@@ -43,8 +43,8 @@ function Page() {
       />
 
       <Section>
-        <div className="grid items-center gap-14 lg:grid-cols-2">
-          <img src={workshopImg} alt="Workshop-Situation mit Prozesslandkarte" width={1024} height={768} loading="lazy" className="rounded-[2.5rem] object-cover shadow-card" />
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <img src={workshopImg} alt="Workshop-Situation mit Prozesslandkarte" width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2.5rem]" />
           <div>
             <Eyebrow>Unser Unternehmensgegenstand</Eyebrow>
             <H2>Die Beratung von Unternehmen im Bereich EDV und Internet</H2>
@@ -61,7 +61,7 @@ function Page() {
       </Section>
 
       <Section muted>
-        <H2 className="mb-14">PointView in Zahlen</H2>
+        <H2 className="mb-10 sm:mb-14">PointView in Zahlen</H2>
         <StatsRow />
       </Section>
 
@@ -74,7 +74,7 @@ function Page() {
             Fachbereich und IT: Er übersetzt technische Fragen in unternehmerische Entscheidungen und begleitet Kunden persönlich durch
             Analyse, Auswahl und Einführung.
           </p>
-          <blockquote className="mt-8 border-l-4 border-primary pl-6 text-xl font-semibold leading-snug text-dark">
+          <blockquote className="mt-8 border-l-4 border-primary pl-5 text-lg font-semibold leading-snug text-dark sm:pl-6 sm:text-xl">
             „Gute Beratung erkennt man daran, dass sie sich überflüssig macht. Unser Ziel ist, dass Ihr Team die Prozesse nach dem Projekt
             selbst weiterentwickeln kann.“
           </blockquote>
@@ -89,9 +89,9 @@ function Page() {
           <Eyebrow>Werte</Eyebrow>
           <H2>Wofür wir stehen</H2>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => (
-            <div key={v.title} className="rounded-3xl bg-card p-8 shadow-card">
+            <div key={v.title} className="rounded-3xl bg-card p-6 shadow-card sm:p-8">
               <h3 className="text-xl font-bold text-dark">{v.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.text}</p>
             </div>
@@ -100,25 +100,25 @@ function Page() {
       </Section>
 
       <Section>
-        <div className="grid gap-14 lg:grid-cols-2">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
             <Eyebrow>Geschichte</Eyebrow>
             <H2>Über 20 Jahre Beratung im Mittelstand</H2>
-            <ol className="mt-10 space-y-8 border-l-2 border-primary/30 pl-8">
+            <ol className="ml-2 mt-8 space-y-6 border-l-2 border-primary/30 pl-6 sm:ml-0 sm:mt-10 sm:space-y-8 sm:pl-8">
               {milestones.map((m) => (
                 <li key={m.year} className="relative">
-                  <span className="absolute -left-[41px] top-1 size-4 rounded-full border-4 border-background bg-primary" />
+                  <span className="absolute -left-[33px] top-1 size-4 rounded-full border-4 border-background bg-primary sm:-left-[41px]" />
                   <p className="text-sm font-bold uppercase tracking-wider text-primary">{m.year}</p>
-                  <p className="mt-1 leading-relaxed text-foreground/80">{m.text}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-foreground/80 sm:text-base">{m.text}</p>
                 </li>
               ))}
             </ol>
           </div>
           <div>
-            <img src={officeImg} alt="Firmensitz der PointView GmbH in Hamburg" width={1024} height={768} loading="lazy" className="rounded-[2.5rem] object-cover shadow-card" />
-            <div className="mt-6 rounded-3xl border p-8">
+            <img src={officeImg} alt="Firmensitz der PointView GmbH in Hamburg" width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2.5rem]" />
+            <div className="mt-5 rounded-3xl border p-6 sm:mt-6 sm:p-8">
               <p className="text-sm font-bold uppercase tracking-wider text-primary">Standort</p>
-              <p className="mt-2 text-xl font-bold text-dark">{company.street}, {company.city}</p>
+              <p className="mt-2 text-lg font-bold text-dark sm:text-xl">{company.street}, {company.city}</p>
               <p className="mt-2 text-sm text-muted-foreground">
                 Direkt an der Elbe, gut erreichbar aus der Hamburger Innenstadt und dem Umland. Termine bei Ihnen vor Ort oder remote sind selbstverständlich.
               </p>

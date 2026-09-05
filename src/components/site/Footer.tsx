@@ -5,7 +5,7 @@ import { Logo } from "./Logo";
 export function Footer() {
   return (
     <footer className="bg-dark text-dark-foreground">
-      <div className="container-site grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container-site grid gap-8 py-12 sm:gap-12 sm:py-16 md:grid-cols-2 lg:grid-cols-4 [&>div+div]:border-t [&>div+div]:border-dark-foreground/10 [&>div+div]:pt-8 md:[&>div+div]:border-0 md:[&>div+div]:pt-0">
         <div>
           <Logo light />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-dark-foreground/70">
@@ -48,9 +48,9 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-dark-foreground/10">
-        <div className="container-site flex flex-col gap-2 py-6 text-xs text-dark-foreground/60 sm:flex-row sm:items-center sm:justify-between">
+        <div className="container-site flex flex-col gap-2 py-6 text-xs leading-relaxed text-dark-foreground/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {company.name}. Alle Rechte vorbehalten.</p>
-          <p>{company.register} · Geschäftsführer: {company.ceo}</p>
+          <p className="break-words">{company.register} · Geschäftsführer: {company.ceo}</p>
         </div>
       </div>
     </footer>

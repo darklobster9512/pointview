@@ -9,7 +9,7 @@ export function Logo({ className, light = false }: { className?: string; light?:
       alt="PointView"
       width={910}
       height={109}
-      className={cn("h-6 w-auto sm:h-7", className)}
+      className={cn("h-6 w-auto max-w-full sm:h-7", className)}
     />
   );
 }

@@ -35,7 +35,7 @@ export const Route = createFileRoute("/karriere/bewerbung")({
 });
 
 const field =
-  "w-full rounded-2xl border bg-background px-5 py-3.5 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/30";
+  "w-full rounded-2xl border bg-background px-4 py-3.5 text-base outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/30 sm:px-5 sm:text-sm";
 
 function Page() {
   const { stelle } = Route.useSearch();
@@ -102,9 +102,9 @@ function Page() {
         cta={null}
       />
 
-      <section className="pb-20 lg:pb-28">
+      <section className="pb-14 sm:pb-20 lg:pb-28">
         <div className="container-site">
-          <form key={formKey} onSubmit={onSubmit} className="mx-auto grid max-w-3xl gap-5 rounded-3xl border bg-card p-8 sm:grid-cols-2 lg:p-12">
+          <form key={formKey} onSubmit={onSubmit} className="mx-auto grid max-w-3xl gap-4 rounded-3xl border bg-card p-5 sm:grid-cols-2 sm:gap-5 sm:p-8 lg:p-12">
             <label className="block">
               <span className="mb-2 block text-sm font-semibold text-dark">Vorname *</span>
               <input required name="vorname" autoComplete="given-name" className={field} />
