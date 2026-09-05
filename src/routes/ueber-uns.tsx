@@ -1,8 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import officeImg from "@/assets/office.jpg";
 
-import workshopImg from "@/assets/workshop.jpg";
 import { btn, CtaBanner, Eyebrow, H2, PageHero, Section, StatsRow } from "@/components/site/Blocks";
 import { company } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
@@ -45,7 +43,7 @@ function Page() {
 
       <Section>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <img src={workshopImg} alt="Workshop-Situation mit Prozesslandkarte" width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2.5rem]" />
+          <img src="/images/workshop.jpg" alt="Workshop-Situation mit Prozesslandkarte" width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2.5rem]" />
           <div>
             <Eyebrow>Unser Unternehmensgegenstand</Eyebrow>
             <H2>Die Beratung von Unternehmen im Bereich EDV und Internet</H2>
@@ -116,7 +114,7 @@ function Page() {
             </ol>
           </div>
           <div>
-            <img src={officeImg} alt="Firmensitz der PointView GmbH in Hamburg" width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2.5rem]" />
+            <img src="/images/office.jpg" alt="Firmensitz der PointView GmbH in Hamburg" width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2.5rem]" />
             <div className="mt-5 rounded-3xl border p-6 sm:mt-6 sm:p-8">
               <p className="text-sm font-bold uppercase tracking-wider text-primary">Standort</p>
               <p className="mt-2 text-lg font-bold text-dark sm:text-xl">{company.street}, {company.city}</p>

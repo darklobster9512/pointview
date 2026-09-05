@@ -1,8 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
-import officeImg from "@/assets/office.jpg";
-import workshopImg from "@/assets/workshop.jpg";
 import {
   btn,
   CircuitPattern,
@@ -53,7 +50,7 @@ function Index() {
       {/* Hero */}
       <section className="relative overflow-hidden text-primary-foreground">
         <img
-          src={heroImg}
+          src="/images/hero.jpg"
           alt="Zwei Berater der PointView GmbH arbeiten gemeinsam am Laptop"
           width={1920}
           height={1080}
@@ -135,7 +132,7 @@ function Index() {
           </div>
           <div className="relative">
             <img
-              src={officeImg}
+              src="/images/office.jpg"
               alt="Bürogebäude der PointView GmbH an der Elbchaussee in Hamburg"
               width={1024}
               height={768}
@@ -174,7 +171,7 @@ function Index() {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className="order-2 lg:order-1">
             <img
-              src={workshopImg}
+              src="/images/workshop.jpg"
               alt="Prozess-Workshop mit Klebezetteln an einer Glaswand"
               width={1024}
               height={768}
