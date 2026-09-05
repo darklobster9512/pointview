@@ -290,10 +290,10 @@ export const team: TeamMember[] = [
     focus: ["Projektleitung", "Vertragsprüfung", "Change Management"],
   },
   {
-    name: "Aylin Kaya",
-    role: "Werkstudentin & Analystin",
-    text: "Unterstützt bei Prozessaufnahmen, Datenauswertungen und der Vorbereitung von Entscheidungsvorlagen.",
-    focus: ["Datenanalyse", "Dokumentation", "Research"],
+    name: "Julia Petersen",
+    role: "Recruiting & People",
+    text: "Verantwortlich für Recruiting und Onboarding. Erste Ansprechpartnerin für Bewerberinnen und Bewerber – von der ersten Nachricht bis zum ersten Arbeitstag.",
+    focus: ["Recruiting", "Onboarding", "Employer Branding"],
   },
 ];
 
