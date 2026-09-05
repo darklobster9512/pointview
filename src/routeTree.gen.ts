@@ -14,12 +14,8 @@ import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
-import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as LeistungenIndexRouteImport } from './routes/leistungen.index'
 import { Route as LeistungenSlugRouteImport } from './routes/leistungen.$slug'
-import { Route as ReferenzenIndexRouteImport } from './routes/referenzen.index'
-import { Route as ReferenzenSlugRouteImport } from './routes/referenzen.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,16 +42,6 @@ const UeberUnsRoute = UeberUnsRouteImport.update({
   path: '/ueber-uns',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/blog/',
-  path: '/blog/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const LeistungenIndexRoute = LeistungenIndexRouteImport.update({
   id: '/leistungen/',
   path: '/leistungen/',
@@ -66,16 +52,6 @@ const LeistungenSlugRoute = LeistungenSlugRouteImport.update({
   path: '/leistungen/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ReferenzenIndexRoute = ReferenzenIndexRouteImport.update({
-  id: '/referenzen/',
-  path: '/referenzen/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReferenzenSlugRoute = ReferenzenSlugRouteImport.update({
-  id: '/referenzen/$slug',
-  path: '/referenzen/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -83,12 +59,8 @@ export interface FileRoutesByFullPath {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/ueber-uns': typeof UeberUnsRoute
-  '/blog/$slug': typeof BlogSlugRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
-  '/referenzen/$slug': typeof ReferenzenSlugRoute
-  '/blog/': typeof BlogIndexRoute
   '/leistungen/': typeof LeistungenIndexRoute
-  '/referenzen/': typeof ReferenzenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -96,12 +68,8 @@ export interface FileRoutesByTo {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/ueber-uns': typeof UeberUnsRoute
-  '/blog/$slug': typeof BlogSlugRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
-  '/referenzen/$slug': typeof ReferenzenSlugRoute
-  '/blog': typeof BlogIndexRoute
   '/leistungen': typeof LeistungenIndexRoute
-  '/referenzen': typeof ReferenzenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -110,12 +78,8 @@ export interface FileRoutesById {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/ueber-uns': typeof UeberUnsRoute
-  '/blog/$slug': typeof BlogSlugRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
-  '/referenzen/$slug': typeof ReferenzenSlugRoute
-  '/blog/': typeof BlogIndexRoute
   '/leistungen/': typeof LeistungenIndexRoute
-  '/referenzen/': typeof ReferenzenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -125,12 +89,8 @@ export interface FileRouteTypes {
     | '/impressum'
     | '/kontakt'
     | '/ueber-uns'
-    | '/blog/$slug'
     | '/leistungen/$slug'
-    | '/referenzen/$slug'
-    | '/blog/'
     | '/leistungen/'
-    | '/referenzen/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -138,12 +98,8 @@ export interface FileRouteTypes {
     | '/impressum'
     | '/kontakt'
     | '/ueber-uns'
-    | '/blog/$slug'
     | '/leistungen/$slug'
-    | '/referenzen/$slug'
-    | '/blog'
     | '/leistungen'
-    | '/referenzen'
   id:
     | '__root__'
     | '/'
@@ -151,12 +107,8 @@ export interface FileRouteTypes {
     | '/impressum'
     | '/kontakt'
     | '/ueber-uns'
-    | '/blog/$slug'
     | '/leistungen/$slug'
-    | '/referenzen/$slug'
-    | '/blog/'
     | '/leistungen/'
-    | '/referenzen/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -165,12 +117,8 @@ export interface RootRouteChildren {
   ImpressumRoute: typeof ImpressumRoute
   KontaktRoute: typeof KontaktRoute
   UeberUnsRoute: typeof UeberUnsRoute
-  BlogSlugRoute: typeof BlogSlugRoute
   LeistungenSlugRoute: typeof LeistungenSlugRoute
-  ReferenzenSlugRoute: typeof ReferenzenSlugRoute
-  BlogIndexRoute: typeof BlogIndexRoute
   LeistungenIndexRoute: typeof LeistungenIndexRoute
-  ReferenzenIndexRoute: typeof ReferenzenIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -210,20 +158,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UeberUnsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/': {
-      id: '/blog/'
-      path: '/blog'
-      fullPath: '/blog/'
-      preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/leistungen/': {
       id: '/leistungen/'
       path: '/leistungen'
@@ -238,20 +172,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LeistungenSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/referenzen/': {
-      id: '/referenzen/'
-      path: '/referenzen'
-      fullPath: '/referenzen/'
-      preLoaderRoute: typeof ReferenzenIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/referenzen/$slug': {
-      id: '/referenzen/$slug'
-      path: '/referenzen/$slug'
-      fullPath: '/referenzen/$slug'
-      preLoaderRoute: typeof ReferenzenSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -261,12 +181,8 @@ const rootRouteChildren: RootRouteChildren = {
   ImpressumRoute: ImpressumRoute,
   KontaktRoute: KontaktRoute,
   UeberUnsRoute: UeberUnsRoute,
-  BlogSlugRoute: BlogSlugRoute,
   LeistungenSlugRoute: LeistungenSlugRoute,
-  ReferenzenSlugRoute: ReferenzenSlugRoute,
-  BlogIndexRoute: BlogIndexRoute,
   LeistungenIndexRoute: LeistungenIndexRoute,
-  ReferenzenIndexRoute: ReferenzenIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
