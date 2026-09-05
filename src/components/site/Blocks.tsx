@@ -10,8 +10,8 @@ const btnBase =
   "inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold transition-all duration-200 hover:-translate-y-0.5";
 
 export const btn = {
-  primary: cn(btnBase, "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_12px_30px_-12px_oklch(0.77_0.17_160/0.7)]"),
-  accent: cn(btnBase, "bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_12px_30px_-12px_oklch(0.47_0.26_268/0.7)]"),
+  primary: cn(btnBase, "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_12px_30px_-12px_oklch(0.70_0.15_225/0.7)]"),
+  accent: cn(btnBase, "bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_12px_30px_-12px_oklch(0.34_0.16_264/0.7)]"),
   dark: cn(btnBase, "bg-dark text-dark-foreground hover:bg-dark/90"),
   ghost: cn(btnBase, "border-2 border-dark text-dark hover:bg-dark hover:text-dark-foreground"),
 };

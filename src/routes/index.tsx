@@ -72,7 +72,7 @@ function Index() {
               Herstellerneutral, praxisnah und auf messbare Ergebnisse ausgerichtet.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link to="/kontakt" className={btn.accent}>
+              <Link to="/kontakt" className={btn.primary}>
                 Projekt besprechen
               </Link>
               <Link to="/leistungen" className={btn.dark}>
