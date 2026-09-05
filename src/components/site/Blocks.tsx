@@ -270,10 +270,16 @@ export function CtaBanner({
   title = "Lassen Sie uns über Ihre Prozesse sprechen.",
   text = "In einem kostenlosen Erstgespräch klären wir, wo der größte Hebel in Ihrem Unternehmen liegt – unverbindlich und auf den Punkt.",
   label = "Erstgespräch vereinbaren",
+  to = "/kontakt",
+  search,
+  secondary,
 }: {
   title?: string;
   text?: string;
   label?: string;
+  to?: string;
+  search?: Record<string, string>;
+  secondary?: { label: string; to: string };
 }) {
   return (
     <section className="py-20 lg:py-28">
@@ -283,10 +289,19 @@ export function CtaBanner({
           <div className="relative max-w-2xl">
             <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">{title}</h2>
             <p className="mt-5 text-lg text-primary-foreground/90">{text}</p>
-            <Link to="/kontakt" className={cn(btn.dark, "mt-8")}>
-              {label}
-              <ArrowRight className="size-5" />
-            </Link>
+            <div className="mt-8 flex flex-wrap gap-4">
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+              <Link {...({ to, search } as any)} className={btn.dark}>
+                {label}
+                <ArrowRight className="size-5" />
+              </Link>
+              {secondary && (
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                <Link to={secondary.to as any} className={cn(btnBase, "border-2 border-primary-foreground/70 text-primary-foreground hover:bg-primary-foreground/10")}>
+                  {secondary.label}
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </div>
