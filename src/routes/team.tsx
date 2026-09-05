@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import portraitImg from "@/assets/portrait.jpg";
 import { btn, CtaBanner, Eyebrow, H2, PageHero, Section } from "@/components/site/Blocks";
 import { company, team, teamValues } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
@@ -14,13 +13,6 @@ export const Route = createFileRoute("/team")({
     ),
   component: Page,
 });
-
-const initials = (name: string) =>
-  name
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .slice(0, 2);
 
 function Page() {
   return (
