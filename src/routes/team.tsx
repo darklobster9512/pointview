@@ -27,15 +27,8 @@ function Page() {
       <Section className="pt-0">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {team.map((m) => (
-            <article key={m.name} className="flex h-full flex-col rounded-3xl border bg-card p-8 transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-card">
-              {m.photo === "portrait" ? (
-                <img src={portraitImg} alt={m.name} width={768} height={960} loading="lazy" className="aspect-square w-full rounded-[2rem] object-cover" />
-              ) : (
-                <div className="flex aspect-square w-full items-center justify-center rounded-[2rem] gradient-hero text-6xl font-bold text-primary-foreground">
-                  {initials(m.name)}
-                </div>
-              )}
-              <h2 className="mt-6 text-2xl font-bold text-dark">{m.name}</h2>
+            <article key={m.name} className="flex h-full flex-col rounded-3xl border border-t-4 border-t-primary bg-card p-8 transition-all hover:-translate-y-1 hover:border-primary/40 hover:border-t-primary hover:shadow-card">
+              <h2 className="text-2xl font-bold text-dark">{m.name}</h2>
               <p className="mt-1 text-sm font-semibold text-primary">{m.role}</p>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">{m.text}</p>
               <div className="mt-6 flex flex-wrap gap-2">
