@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as TeamRouteImport } from './routes/team'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
 import { Route as LeistungenIndexRouteImport } from './routes/leistungen.index'
 import { Route as LeistungenSlugRouteImport } from './routes/leistungen.$slug'
@@ -37,6 +38,11 @@ const KontaktRoute = KontaktRouteImport.update({
   path: '/kontakt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UeberUnsRoute = UeberUnsRouteImport.update({
   id: '/ueber-uns',
   path: '/ueber-uns',
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
+  '/team': typeof TeamRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
   '/leistungen/': typeof LeistungenIndexRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
+  '/team': typeof TeamRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
   '/leistungen': typeof LeistungenIndexRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
+  '/team': typeof TeamRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
   '/leistungen/': typeof LeistungenIndexRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/datenschutz'
     | '/impressum'
     | '/kontakt'
+    | '/team'
     | '/ueber-uns'
     | '/leistungen/$slug'
     | '/leistungen/'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/datenschutz'
     | '/impressum'
     | '/kontakt'
+    | '/team'
     | '/ueber-uns'
     | '/leistungen/$slug'
     | '/leistungen'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/datenschutz'
     | '/impressum'
     | '/kontakt'
+    | '/team'
     | '/ueber-uns'
     | '/leistungen/$slug'
     | '/leistungen/'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   DatenschutzRoute: typeof DatenschutzRoute
   ImpressumRoute: typeof ImpressumRoute
   KontaktRoute: typeof KontaktRoute
+  TeamRoute: typeof TeamRoute
   UeberUnsRoute: typeof UeberUnsRoute
   LeistungenSlugRoute: typeof LeistungenSlugRoute
   LeistungenIndexRoute: typeof LeistungenIndexRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KontaktRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ueber-uns': {
       id: '/ueber-uns'
       path: '/ueber-uns'
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   DatenschutzRoute: DatenschutzRoute,
   ImpressumRoute: ImpressumRoute,
   KontaktRoute: KontaktRoute,
+  TeamRoute: TeamRoute,
   UeberUnsRoute: UeberUnsRoute,
   LeistungenSlugRoute: LeistungenSlugRoute,
   LeistungenIndexRoute: LeistungenIndexRoute,
