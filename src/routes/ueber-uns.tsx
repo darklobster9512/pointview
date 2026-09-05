@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import officeImg from "@/assets/office.jpg";
-import portraitImg from "@/assets/portrait.jpg";
+
 import workshopImg from "@/assets/workshop.jpg";
 import { btn, CtaBanner, Eyebrow, H2, PageHero, Section, StatsRow } from "@/components/site/Blocks";
 import { company } from "@/data/site";
