@@ -160,11 +160,15 @@ export function LogoStrip({ label = "Unternehmen, die uns vertrauen" }: { label?
     <div className="container-site relative z-10">
       <div className="overflow-hidden rounded-full border bg-card px-6 py-6 shadow-pill">
         <p className="sr-only">{label}</p>
-        <div className="flex w-max animate-[marquee_40s_linear_infinite] gap-14 [--tw-translate-x:0]">
+        <div className="flex w-max items-center animate-[marquee_50s_linear_infinite] gap-16 [--tw-translate-x:0]">
           {items.map((c, i) => (
-            <span key={i} className="whitespace-nowrap text-lg font-bold tracking-tight text-dark/45 sm:text-xl">
-              {c}
-            </span>
+            <img
+              key={i}
+              src={c.logo}
+              alt={c.name}
+              loading="lazy"
+              className="h-8 w-auto max-w-[140px] shrink-0 object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:h-9"
+            />
           ))}
         </div>
       </div>
