@@ -336,22 +336,68 @@ export const careerBenefits = [
 export type Job = {
   slug: string;
   title: string;
+  area: string;
   location: string;
-  type: string;
+  model: string;
+  hours?: string;
+  salary?: string;
+  status: "Sofort verfügbar" | "Bald verfügbar";
   start: string;
   short: string;
+  description: string;
   tasks: string[];
   profile: string[];
+  offer: string[];
 };
 
+// Platzhalter-Stellen – Gehälter, Zeiten und Texte vom Kunden zu bestätigen.
 export const jobs: Job[] = [
+  {
+    slug: "online-prozesstester",
+    title: "Online-Prozesstester:in für digitale Anwendungen (m/w/d)",
+    area: "Quality",
+    location: "Remote (Deutschland)",
+    model: "Minijob · Teilzeit · flexibel",
+    hours: "5–25 Std./Woche, freie Einteilung",
+    salary: "29 € / Stunde",
+    status: "Sofort verfügbar",
+    start: "ab sofort",
+    short:
+      "Sie durchlaufen Geschäftsprozesse in Webseiten, Portalen und Apps aus Nutzersicht und liefern strukturiertes Feedback – ortsunabhängig, in Ihrem Tempo, ohne Vorkenntnisse.",
+    description:
+      "Für ausgewählte Kundenprojekte suchen wir Menschen, die digitale Abläufe – vom Bestellprozess bis zum Kundenportal – mit wachem Blick durchgehen und ihre Beobachtungen sauber dokumentieren. Sie bekommen von uns klare Testanleitungen und arbeiten die Aufgaben selbstständig ab, wann und wo Sie mögen. Ideal als Nebentätigkeit neben Studium, Familie oder Hauptjob.",
+    tasks: [
+      "Durchlaufen definierter Testszenarien und Prozessschritte in Webseiten und mobilen Apps",
+      "Bewertung von Nutzerführung, Verständlichkeit und Bedienbarkeit",
+      "Nachvollziehbare Dokumentation von Fehlern, Auffälligkeiten und Eindrücken",
+      "Formulieren konkreter Verbesserungsvorschläge für die Projektteams",
+    ],
+    profile: [
+      "Sorgfältige, verlässliche Arbeitsweise und ein Auge fürs Detail",
+      "Sicherer Umgang mit Smartphone, Tablet oder PC",
+      "Stabile Internetverbindung und ein eigenes Testgerät",
+      "Deutschkenntnisse mind. B2 – keine formale Ausbildung nötig",
+    ],
+    offer: [
+      "Vollständig remote, Zeiten frei wählbar (auch abends und am Wochenende)",
+      "Kurze, verständliche Einarbeitung mit Beispiel-Tests",
+      "Feste Stundenvergütung – transparent und zuverlässig",
+      "Unkomplizierte Zusammenarbeit, direkter Draht zum Projektteam",
+    ],
+  },
   {
     slug: "senior-consultant-prozessoptimierung",
     title: "Senior Consultant Prozessoptimierung (m/w/d)",
+    area: "Beratung",
     location: "Hamburg / Remote",
-    type: "Vollzeit",
+    model: "Festanstellung · Vollzeit",
+    hours: "40 Std./Woche · flexibel",
+    salary: "75.000 – 95.000 € / Jahr",
+    status: "Sofort verfügbar",
     start: "ab sofort",
     short: "Sie analysieren Geschäftsprozesse im Mittelstand, gestalten Soll-Abläufe und begleiten die Umsetzung bis ins Tagesgeschäft.",
+    description:
+      "Als Senior Consultant sind Sie das Gesicht von PointView beim Kunden. Sie nehmen Prozesse vor Ort auf, moderieren Workshops mit Geschäftsführung und Fachbereichen und verantworten, dass aus Analysen messbare Ergebnisse werden – ohne Folienschlachten, dafür mit klaren Maßnahmen.",
     tasks: [
       "Aufnahme und Bewertung von Geschäftsprozessen gemeinsam mit den Fachbereichen unserer Kunden",
       "Moderation von Workshops und Erarbeitung priorisierter Maßnahmenpläne",
@@ -364,14 +410,26 @@ export const jobs: Job[] = [
       "Freude daran, mit Menschen in Disposition, Produktion und Verwaltung zu arbeiten",
       "Sehr gute Deutschkenntnisse, Reisebereitschaft innerhalb Norddeutschlands",
     ],
+    offer: [
+      "Kein Wochenreisen-Zwang – die meisten Kunden sitzen in Hamburg und Norddeutschland",
+      "Direkter Weg in Themen- oder Teamverantwortung",
+      "Weiterbildungsbudget für Zertifizierungen (z. B. Six Sigma, ITIL)",
+      "Betriebliche Altersvorsorge und Deutschlandticket",
+    ],
   },
   {
     slug: "it-consultant-erp",
     title: "IT-Consultant ERP & Softwareauswahl (m/w/d)",
+    area: "Beratung",
     location: "Hamburg",
-    type: "Vollzeit oder Teilzeit",
+    model: "Festanstellung · Voll- oder Teilzeit",
+    hours: "32–40 Std./Woche",
+    salary: "65.000 – 85.000 € / Jahr",
+    status: "Sofort verfügbar",
     start: "ab 01.01.2027",
     short: "Sie begleiten Kunden herstellerneutral bei Auswahl und Einführung von ERP-, CRM- und DMS-Systemen.",
+    description:
+      "Sie übersetzen zwischen Fachlichkeit und Technik: von der Anforderungsaufnahme über den Anbietervergleich bis zur Einführung. Dabei bleiben Sie herstellerneutral und vertreten ausschließlich die Interessen unserer Kunden.",
     tasks: [
       "Erhebung von Anforderungen und Erstellung von Lastenheften",
       "Marktsichtung, Anbietervergleich und Vorbereitung von Entscheidungsvorlagen",
@@ -384,14 +442,26 @@ export const jobs: Job[] = [
       "Strukturierte Arbeitsweise und klare Kommunikation gegenüber Geschäftsführung und Fachbereich",
       "Abgeschlossenes Studium oder vergleichbare Qualifikation",
     ],
+    offer: [
+      "Hybrides Arbeiten mit Büro in der Hamburger Innenstadt",
+      "30 Urlaubstage plus Sonderurlaub für Zertifizierungen",
+      "Individuelles Weiterbildungsbudget",
+      "Betriebliche Altersvorsorge",
+    ],
   },
   {
     slug: "werkstudent-digitalisierung",
     title: "Werkstudent:in Digitalisierung & Prozessanalyse",
+    area: "Beratung",
     location: "Hamburg / Remote",
-    type: "15–20 Std./Woche",
+    model: "Werkstudium · Teilzeit",
+    hours: "15–20 Std./Woche",
+    salary: "18 € / Stunde",
+    status: "Sofort verfügbar",
     start: "ab sofort",
     short: "Sie unterstützen unser Team bei Prozessaufnahmen, Datenauswertungen und der Vorbereitung von Kundenterminen.",
+    description:
+      "Sie arbeiten von Anfang an in echten Kundenprojekten mit: Prozessdokumentationen aufbereiten, Kennzahlen auswerten, Workshops vorbereiten. Sie lernen, wie Beratung im Mittelstand wirklich funktioniert – und bekommen Verantwortung, sobald Sie sie tragen wollen.",
     tasks: [
       "Aufbereitung von Prozessdokumentationen und Kennzahlen",
       "Recherche zu Software-Anbietern und Marktentwicklungen",
@@ -404,14 +474,24 @@ export const jobs: Job[] = [
       "Neugier auf Abläufe in Unternehmen und Freude an klarer Dokumentation",
       "Mindestens noch zwei Semester Studiendauer",
     ],
+    offer: [
+      "Flexible Zeiten rund um Vorlesungen und Prüfungen",
+      "Echte Projektarbeit statt Kaffeekochen",
+      "Perspektive auf Abschlussarbeit und Einstieg nach dem Studium",
+      "Notebook und Deutschlandticket",
+    ],
   },
   {
     slug: "initiativbewerbung",
     title: "Initiativbewerbung",
+    area: "Alle Bereiche",
     location: "Hamburg / Remote",
-    type: "flexibel",
+    model: "flexibel",
+    status: "Sofort verfügbar",
     start: "jederzeit",
     short: "Keine passende Stelle dabei? Wenn Sie Prozesse, IT und Menschen zusammenbringen möchten, freuen wir uns auf Ihre Nachricht.",
+    description:
+      "Wir wachsen kontinuierlich und sind offen für Menschen, die nicht in eine unserer Ausschreibungen passen, aber genau zu uns. Erzählen Sie uns, welche Themen Sie antreiben und was Sie bei PointView bewegen möchten.",
     tasks: [
       "Erzählen Sie uns, welche Themen Sie antreiben und was Sie bei PointView bewegen möchten",
       "Wir melden uns innerhalb einer Woche mit einer ehrlichen Einschätzung",
@@ -419,6 +499,11 @@ export const jobs: Job[] = [
     profile: [
       "Erfahrung in Beratung, IT, Organisation oder Projektmanagement",
       "Lust auf ein kleines Team mit direktem Kundenkontakt",
+    ],
+    offer: [
+      "Wir gestalten die Rolle gemeinsam mit Ihnen",
+      "Kurze Wege zur Geschäftsführung, schnelle Entscheidungen",
+      "Alle Vorteile unseres Teams: Weiterbildung, Deutschlandticket, moderne Ausstattung",
     ],
   },
 ];
