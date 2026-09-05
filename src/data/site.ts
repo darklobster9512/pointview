@@ -1,3 +1,16 @@
+import siemensLogo from "@/assets/logos/siemens.svg.asset.json";
+import sapLogo from "@/assets/logos/sap.svg.asset.json";
+import telekomLogo from "@/assets/logos/telekom.svg.asset.json";
+import volkswagenLogo from "@/assets/logos/volkswagen.svg.asset.json";
+import bmwLogo from "@/assets/logos/bmw.svg.asset.json";
+import mercedesLogo from "@/assets/logos/mercedes.svg.asset.json";
+import boschLogo from "@/assets/logos/bosch.svg.asset.json";
+import allianzLogo from "@/assets/logos/allianz.svg.asset.json";
+import lufthansaLogo from "@/assets/logos/lufthansa.svg.asset.json";
+import dbLogo from "@/assets/logos/db.svg.asset.json";
+import basfLogo from "@/assets/logos/basf.svg.asset.json";
+import adidasLogo from "@/assets/logos/adidas.svg.asset.json";
+
 export const company = {
   name: "PointView GmbH",
   short: "PointView",
