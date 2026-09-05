@@ -16,6 +16,8 @@ export const company = {
   short: "PointView",
   since: 2003,
   email: "kontakt@pointview.gmbh",
+  phone: "040 573076460",
+  phoneHref: "tel:+4940573076460",
   street: "Elbchaussee 485",
   city: "22587 Hamburg",
   register: "Amtsgericht Hamburg, HRB 88760",
