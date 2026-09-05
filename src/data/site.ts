@@ -249,141 +249,167 @@ export const services: Service[] = [
   },
 ];
 
-export type CaseStudy = {
-  slug: string;
-  client: string;
-  industry: string;
-  title: string;
-  teaser: string;
-  services: string[];
-  challenge: string;
-  approach: string[];
-  results: { value: string; label: string }[];
-  quote?: { text: string; author: string };
+/* ---------- Team (Platzhalter – vom Kunden nachzuliefern) ---------- */
+
+export type TeamMember = {
+  name: string;
+  role: string;
+  text: string;
+  focus: string[];
+  photo?: "portrait";
 };
 
-export const caseStudies: CaseStudy[] = [
+export const team: TeamMember[] = [
   {
-    slug: "auftragsabwicklung-logistik",
-    client: "Nordlicht Logistik",
-    industry: "Logistik",
-    title: "Auftragsabwicklung um 40 % beschleunigt",
-    teaser: "Prozessanalyse und Workflow-Automatisierung in der Auftragsannahme eines mittelständischen Logistikers.",
-    services: ["Prozessanalyse", "Prozessoptimierung"],
-    challenge:
-      "Aufträge kamen per E-Mail, Fax und Telefon und wurden von Hand in drei verschiedene Systeme übertragen. Rückfragen und Tippfehler führten zu Verzögerungen und Reklamationen.",
-    approach: [
-      "Aufnahme des Ist-Prozesses mit allen Beteiligten in Disposition, Vertrieb und Buchhaltung",
-      "Messung von Durchlaufzeiten und Fehlerquoten über vier Wochen",
-      "Gestaltung eines Soll-Prozesses mit zentralem Auftragseingang und digitaler Freigabe",
-      "Einführung eines Workflow-Tools und Anbindung an das bestehende TMS",
-    ],
-    results: [
-      { value: "-40%", label: "Durchlaufzeit je Auftrag" },
-      { value: "-70%", label: "manuelle Übertragungen" },
-      { value: "6 Wochen", label: "bis zum Go-live" },
-    ],
-    quote: {
-      text: "PointView hat uns nicht mit Folien überzeugt, sondern indem sie zwei Wochen bei uns in der Disposition saßen.",
-      author: "Geschäftsführer, Nordlicht Logistik",
-    },
+    name: "Sven Howest",
+    role: "Geschäftsführer",
+    text: "Gründer der PointView GmbH. Übersetzt technische Fragen in unternehmerische Entscheidungen und begleitet Kunden persönlich durch Analyse, Auswahl und Einführung.",
+    focus: ["IT-Strategie", "Prozessoptimierung", "Softwareauswahl"],
+    photo: "portrait",
   },
   {
-    slug: "erp-auswahl-maschinenbau",
-    client: "Elbwerk Maschinenbau",
-    industry: "Maschinenbau",
-    title: "ERP-Auswahl ohne böse Überraschungen",
-    teaser: "Herstellerneutrale Auswahl und Einführungsbegleitung eines neuen ERP-Systems für 120 Mitarbeitende.",
-    services: ["Softwareauswahl & Einführung", "IT-Beratung"],
-    challenge:
-      "Das bestehende ERP-System war 18 Jahre alt, der Hersteller kündigte das Support-Ende an. Anforderungen existierten nur in den Köpfen einzelner Mitarbeitender.",
-    approach: [
-      "Anforderungsworkshops mit allen Fachbereichen und Erstellung eines Lastenhefts",
-      "Marktsichtung und Shortlist aus vier Anbietern",
-      "Strukturierte Anbieterpräsentationen anhand echter Geschäftsfälle",
-      "Vertragsprüfung und Projektleitung der Einführung",
+    name: "Katrin Lindemann",
+    role: "Senior Consultant Prozessanalyse",
+    text: "Seit 2011 bei PointView. Nimmt Prozesse dort auf, wo sie gelebt werden – in Disposition, Buchhaltung und Produktion.",
+    focus: ["Prozessanalyse", "Kennzahlen", "Workshops"],
+  },
+  {
+    name: "Jonas Petersen",
+    role: "IT-Consultant ERP & Schnittstellen",
+    text: "Kennt ERP-, CRM- und DMS-Systeme aus über 30 Einführungsprojekten und sorgt dafür, dass Daten sauber zwischen Anwendungen fließen.",
+    focus: ["ERP", "Schnittstellen", "Datenmigration"],
+  },
+  {
+    name: "Merle Brandt",
+    role: "Consultant Digitalisierung",
+    text: "Konzipiert Portale, Formulare und digitale Abläufe – immer mit Blick darauf, was Mitarbeitende und Kunden wirklich nutzen.",
+    focus: ["Kundenportale", "Workflow-Automatisierung", "UX"],
+  },
+  {
+    name: "Tobias Reimers",
+    role: "Projektleiter Softwareeinführung",
+    text: "Steuert Einführungsprojekte von der Anbieterauswahl bis zum Go-live und hält Zeitplan, Budget und Nerven zusammen.",
+    focus: ["Projektleitung", "Vertragsprüfung", "Change Management"],
+  },
+  {
+    name: "Aylin Kaya",
+    role: "Werkstudentin & Analystin",
+    text: "Unterstützt bei Prozessaufnahmen, Datenauswertungen und der Vorbereitung von Entscheidungsvorlagen.",
+    focus: ["Datenanalyse", "Dokumentation", "Research"],
+  },
+];
+
+export const teamValues = [
+  { title: "Klartext", text: "Wir sagen, was wir sehen – auch wenn es unbequem ist. Empfehlungen begründen wir nachvollziehbar." },
+  { title: "Verantwortung", text: "Wer bei uns ein Projekt übernimmt, bleibt bis zum Ergebnis dran. Keine Übergabe an die zweite Reihe." },
+  { title: "Pragmatismus", text: "Wir suchen die einfachste Lösung, die funktioniert – nicht die eindrucksvollste." },
+  { title: "Partnerschaft", text: "Viele Kunden begleiten wir seit über zehn Jahren. Das geht nur mit Vertrauen auf beiden Seiten." },
+];
+
+/* ---------- Karriere (Platzhalter – vom Kunden nachzuliefern) ---------- */
+
+export const careerBenefits = [
+  { title: "Flexible Arbeitszeiten", text: "Vertrauensarbeitszeit und Rücksicht auf Familie, Studium oder Ehrenamt." },
+  { title: "Homeoffice & Remote", text: "Arbeiten von zu Hause, aus dem Büro an der Elbchaussee oder beim Kunden – je nach Projektphase." },
+  { title: "Weiterbildung", text: "Jährliches Budget für Schulungen, Zertifizierungen und Konferenzen." },
+  { title: "Kurze Wege", text: "Kleines Team, direkte Kommunikation mit der Geschäftsführung, schnelle Entscheidungen." },
+  { title: "Deutschlandticket", text: "Wir übernehmen das Deutschlandticket oder bezuschussen Ihr Fahrrad." },
+  { title: "Moderne Ausstattung", text: "Notebook und Smartphone Ihrer Wahl, ergonomischer Arbeitsplatz, aktuelle Tools." },
+];
+
+export type Job = {
+  slug: string;
+  title: string;
+  location: string;
+  type: string;
+  start: string;
+  short: string;
+  tasks: string[];
+  profile: string[];
+};
+
+export const jobs: Job[] = [
+  {
+    slug: "senior-consultant-prozessoptimierung",
+    title: "Senior Consultant Prozessoptimierung (m/w/d)",
+    location: "Hamburg / Remote",
+    type: "Vollzeit",
+    start: "ab sofort",
+    short: "Sie analysieren Geschäftsprozesse im Mittelstand, gestalten Soll-Abläufe und begleiten die Umsetzung bis ins Tagesgeschäft.",
+    tasks: [
+      "Aufnahme und Bewertung von Geschäftsprozessen gemeinsam mit den Fachbereichen unserer Kunden",
+      "Moderation von Workshops und Erarbeitung priorisierter Maßnahmenpläne",
+      "Begleitung der Umsetzung inklusive Kennzahlen und Erfolgskontrolle",
+      "Fachliche Führung kleiner Projektteams",
     ],
-    results: [
-      { value: "4", label: "Anbieter im strukturierten Vergleich" },
-      { value: "im Budget", label: "Einführung ohne Nachträge" },
-      { value: "9 Monate", label: "von Auswahl bis Go-live" },
+    profile: [
+      "Mindestens fünf Jahre Erfahrung in Prozessberatung, Organisation oder Operations",
+      "Sicherer Umgang mit BPMN, Kennzahlensystemen und gängigen Analyse-Tools",
+      "Freude daran, mit Menschen in Disposition, Produktion und Verwaltung zu arbeiten",
+      "Sehr gute Deutschkenntnisse, Reisebereitschaft innerhalb Norddeutschlands",
     ],
   },
   {
-    slug: "kundenportal-medizintechnik",
-    client: "Hanse Medical",
-    industry: "Medizintechnik",
-    title: "Kundenportal ersetzt 1.200 E-Mails im Monat",
-    teaser: "Konzeption eines Serviceportals für Störungsmeldungen und Ersatzteilbestellungen inklusive Systemanbindung.",
-    services: ["Internet & Digitalisierung", "Prozessoptimierung"],
-    challenge:
-      "Servicetechniker und Kunden meldeten Störungen per E-Mail und Telefon. Der Innendienst verbrachte den halben Tag mit Rückfragen zu Seriennummern und Standorten.",
-    approach: [
-      "Analyse des Servicemeldeprozesses und der beteiligten Systeme",
-      "Konzeption eines Portals mit Geräteübersicht, Störungsmeldung und Ersatzteilshop",
-      "Agenturauswahl und Steuerung der Umsetzung",
-      "Anbindung an Ticketsystem und ERP",
+    slug: "it-consultant-erp",
+    title: "IT-Consultant ERP & Softwareauswahl (m/w/d)",
+    location: "Hamburg",
+    type: "Vollzeit oder Teilzeit",
+    start: "ab 01.01.2027",
+    short: "Sie begleiten Kunden herstellerneutral bei Auswahl und Einführung von ERP-, CRM- und DMS-Systemen.",
+    tasks: [
+      "Erhebung von Anforderungen und Erstellung von Lastenheften",
+      "Marktsichtung, Anbietervergleich und Vorbereitung von Entscheidungsvorlagen",
+      "Projektleitung in Einführungsprojekten inklusive Datenmigration und Tests",
+      "Prüfung von Angeboten und Verträgen gemeinsam mit unseren Kunden",
     ],
-    results: [
-      { value: "-1.200", label: "E-Mails pro Monat" },
-      { value: "85%", label: "der Meldungen über das Portal" },
-      { value: "+30%", label: "Erstlösungsquote im Service" },
+    profile: [
+      "Erfahrung mit mindestens einem ERP-System auf Beratungs- oder Anwenderseite",
+      "Verständnis für Schnittstellen, Datenmodelle und Betriebsmodelle (On-Premises, Cloud)",
+      "Strukturierte Arbeitsweise und klare Kommunikation gegenüber Geschäftsführung und Fachbereich",
+      "Abgeschlossenes Studium oder vergleichbare Qualifikation",
+    ],
+  },
+  {
+    slug: "werkstudent-digitalisierung",
+    title: "Werkstudent:in Digitalisierung & Prozessanalyse",
+    location: "Hamburg / Remote",
+    type: "15–20 Std./Woche",
+    start: "ab sofort",
+    short: "Sie unterstützen unser Team bei Prozessaufnahmen, Datenauswertungen und der Vorbereitung von Kundenterminen.",
+    tasks: [
+      "Aufbereitung von Prozessdokumentationen und Kennzahlen",
+      "Recherche zu Software-Anbietern und Marktentwicklungen",
+      "Vorbereitung von Workshops und Präsentationen",
+      "Mitarbeit an internen Digitalisierungsprojekten",
+    ],
+    profile: [
+      "Laufendes Studium in Wirtschaftsinformatik, BWL, Wirtschaftsingenieurwesen oder ähnlich",
+      "Sicherer Umgang mit Excel bzw. Google Sheets, idealerweise erste Erfahrung mit BPMN",
+      "Neugier auf Abläufe in Unternehmen und Freude an klarer Dokumentation",
+      "Mindestens noch zwei Semester Studiendauer",
+    ],
+  },
+  {
+    slug: "initiativbewerbung",
+    title: "Initiativbewerbung",
+    location: "Hamburg / Remote",
+    type: "flexibel",
+    start: "jederzeit",
+    short: "Keine passende Stelle dabei? Wenn Sie Prozesse, IT und Menschen zusammenbringen möchten, freuen wir uns auf Ihre Nachricht.",
+    tasks: [
+      "Erzählen Sie uns, welche Themen Sie antreiben und was Sie bei PointView bewegen möchten",
+      "Wir melden uns innerhalb einer Woche mit einer ehrlichen Einschätzung",
+    ],
+    profile: [
+      "Erfahrung in Beratung, IT, Organisation oder Projektmanagement",
+      "Lust auf ein kleines Team mit direktem Kundenkontakt",
     ],
   },
 ];
 
-export type Post = {
-  slug: string;
-  title: string;
-  date: string;
-  category: string;
-  excerpt: string;
-  readingTime: string;
-  body: string[];
-};
-
-export const posts: Post[] = [
-  {
-    slug: "prozessanalyse-fuenf-fehler",
-    title: "Fünf Fehler, die fast jede Prozessanalyse ruinieren",
-    date: "2026-08-18",
-    category: "Prozessanalyse",
-    excerpt: "Warum Prozessanalysen oft in der Schublade landen – und wie Sie das von Anfang an vermeiden.",
-    readingTime: "6 Min.",
-    body: [
-      "Prozessanalysen scheitern selten an der Methode. Sie scheitern daran, dass die falschen Fragen gestellt, die falschen Personen befragt oder die Ergebnisse nie in Entscheidungen übersetzt werden.",
-      "Der erste Fehler: den Prozess so aufnehmen, wie er dokumentiert ist – nicht wie er gelebt wird. Wer nur die Verfahrensanweisung liest, sieht die Excel-Liste nicht, die der Sachbearbeiter nebenbei führt.",
-      "Der zweite Fehler: keine Messung. Ohne Durchlaufzeiten, Mengen und Fehlerquoten bleibt jede Bewertung eine Meinung.",
-      "Der dritte Fehler: zu großer Scope. Wer zwanzig Prozesse gleichzeitig analysiert, bekommt zwanzig halbe Ergebnisse.",
-      "Der vierte Fehler: die Betroffenen nicht einbinden. Wer über Mitarbeitende analysiert statt mit ihnen, bekommt später keine Akzeptanz für Veränderungen.",
-      "Der fünfte Fehler: kein Entscheidungsformat. Eine Analyse muss in einer Liste priorisierter Maßnahmen enden, über die jemand entscheidet – sonst war sie nur teuer.",
-    ],
-  },
-  {
-    slug: "erp-auswahl-lastenheft",
-    title: "Warum ein gutes Lastenheft die halbe ERP-Auswahl ist",
-    date: "2026-07-02",
-    category: "Softwareauswahl",
-    excerpt: "Anbieter vergleichbar machen, Nachträge vermeiden und das eigene Unternehmen besser verstehen.",
-    readingTime: "5 Min.",
-    body: [
-      "Viele Unternehmen starten die ERP-Auswahl mit Herstellerpräsentationen. Das Problem: Jeder Anbieter zeigt, was sein System gut kann – nicht, was Sie brauchen.",
-      "Ein Lastenheft dreht die Perspektive um. Es beschreibt Ihre Geschäftsfälle, Mengengerüste und Schnittstellen so konkret, dass Anbieter darauf antworten müssen.",
-      "Der Nebeneffekt ist oft der wichtigste: Beim Schreiben des Lastenhefts verstehen Fachbereiche zum ersten Mal, wie ihre Prozesse zusammenhängen – und wo sie sich widersprechen.",
-      "Unsere Empfehlung: Investieren Sie vier bis sechs Wochen in Anforderungen, bevor Sie einen Anbieter einladen. Diese Zeit holen Sie in der Einführung mehrfach wieder ein.",
-    ],
-  },
-  {
-    slug: "digitalisierung-mittelstand-anfangen",
-    title: "Digitalisierung im Mittelstand: Wo man wirklich anfangen sollte",
-    date: "2026-05-20",
-    category: "Digitalisierung",
-    excerpt: "Nicht bei der Technik – sondern bei dem Prozess, der Ihre Mitarbeitenden am meisten nervt.",
-    readingTime: "4 Min.",
-    body: [
-      "Digitalisierung wird oft als Technikprojekt verstanden: neue Software, neue Cloud, neues Portal. Dabei ist die wichtigste Frage nicht, welches Werkzeug Sie einsetzen, sondern welchen Ablauf Sie verbessern wollen.",
-      "Unser Rat nach über 20 Jahren Beratung: Fragen Sie Ihre Mitarbeitenden, welcher Prozess sie am meisten Zeit kostet. Die Antwort kommt schnell und ist fast immer richtig.",
-      "Beginnen Sie dort. Analysieren Sie den Prozess, vereinfachen Sie ihn, und digitalisieren Sie erst dann. Ein schlechter Prozess wird durch Software nicht besser – nur schneller schlecht.",
-    ],
-  },
+export const applicationSteps = [
+  { title: "Bewerbung", text: "Lebenslauf und ein paar Sätze zu Ihrer Motivation per E-Mail – ein Anschreiben brauchen wir nicht." },
+  { title: "Kennenlernen", text: "Ein 30-minütiges Videogespräch mit der Geschäftsführung, um gegenseitige Erwartungen zu klären." },
+  { title: "Fachgespräch", text: "Wir besprechen einen echten Fall aus unserer Praxis – gemeinsam mit einem Mitglied des Teams." },
+  { title: "Entscheidung", text: "Innerhalb einer Woche nach dem Fachgespräch erhalten Sie eine Rückmeldung und ein Angebot." },
 ];
