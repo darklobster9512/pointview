@@ -1,15 +1,17 @@
-# Bewerbungsübermittlung auf neuen Dienst umstellen
+# Bewerbungsübermittlung auf vic-automation umstellen
 
 ## Was sich ändert
 
-Bewerbungen aus dem Formular unter `/karriere/bewerbung` gehen künftig an den neuen Dienst `gzgfyuftjvezqjkosntu.supabase.co` und werden mit der Kennung **2de5a23d-72e1-48bc-bc0f-9e8c11f3181c** übermittelt. Formularfelder, Ablauf und Meta Pixel bleiben unverändert.
-
-Hinweis: Der bisher hinterlegte öffentliche Zugangsschlüssel gehört zum alten Dienst. Ich behalte ihn vorerst bei; falls der neue Dienst einen eigenen Schlüssel verlangt, schlägt das Absenden fehl – dann brauche ich den neuen öffentlichen Schlüssel (anon key) des neuen Projekts.
+Bewerbungen aus dem Formular unter `/karriere/bewerbung` gehen künftig an den Dienst des Referenzprojekts „vic-automation" und werden mit der Kennung **2de5a23d-72e1-48bc-bc0f-9e8c11f3181c** übermittelt. Der passende öffentliche Zugangsschlüssel des neuen Projekts wird mit übernommen, damit das Absenden funktioniert. Formularfelder, Ablauf und Meta Pixel bleiben unverändert.
 
 ## Technische Details
 
-- `src/routes/karriere.bewerbung.tsx`
-  - Zeile 11: `BRANDING_ID = "2de5a23d-72e1-48bc-bc0f-9e8c11f3181c"`
-  - Zeile 12: `API_URL = "https://gzgfyuftjvezqjkosntu.supabase.co/functions/v1/submit-application"`
-  - `ANON_KEY` unverändert, bis ein neuer Schlüssel vorliegt.
-- Einzige Fundstellen im Projekt; keine weiteren Anpassungen nötig.
+`src/routes/karriere.bewerbung.tsx` (einzige Fundstellen im Projekt):
+
+- `BRANDING_ID = "2de5a23d-72e1-48bc-bc0f-9e8c11f3181c"`
+- `API_URL = "https://gzgfyuftjvezqjkosntu.supabase.co/functions/v1/submit-application"`
+- `ANON_KEY` auf den publishable/anon-Key des Projekts `gzgfyuftjvezqjkosntu` setzen (aus dem Referenzprojekt übernommen; öffentlicher Key, darf im Code stehen)
+
+Die Funktion `submit-application` existiert im Referenzprojekt, die Feldnamen (`first_name`, `last_name`, `email`, `phone`, `employment_type`, `position`, `branding_id`, `street`, `zip`, `city`, `resume`) bleiben wie bisher.
+
+Danach: Typprüfung laufen lassen und das Formular im Browser einmal absenden, um die Antwort des Dienstes zu bestätigen.
