@@ -8,10 +8,10 @@ import { pageMeta } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 // Externer Bewerbungsdienst (identisch zum Referenzprojekt)
-const BRANDING_ID = "8b44e927-dac5-41ca-99aa-1ce4e8530eb3";
-const API_URL = "https://laozvnaupdecerpvwzmh.supabase.co/functions/v1/submit-application";
+const BRANDING_ID = "2de5a23d-72e1-48bc-bc0f-9e8c11f3181c";
+const API_URL = "https://gzgfyuftjvezqjkosntu.supabase.co/functions/v1/submit-application";
 const ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxhb3p2bmF1cGRlY2VycHZ3em1oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3NzEwNjUsImV4cCI6MjA5NDM0NzA2NX0.uXLnpeKILEDBoC8yCcX1ZL-hdlhFPUl-bVYcoxHKu2Y";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd6Z2Z5dWZ0anZlenFqa29zbnR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3NDg2MTksImV4cCI6MjEwNDMyNDYxOX0.4bgK_e0ODXR1Jr-WXwIViMAtx6Ok7_4omAJOsC0r8BU";
 
 const employmentTypes: { value: EmploymentType; label: string }[] = [
   { value: "vollzeit", label: "Vollzeit" },
