@@ -53,6 +53,10 @@ function Page() {
     setEmployment(next.length === 1 ? next[0]!.value : next.some((t) => t.value === employment) ? employment : "");
   }
 
+  function trackLead() {
+    (window as Window & { fbq?: (...args: unknown[]) => void }).fbq?.("track", "Lead");
+  }
+
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
@@ -62,7 +66,6 @@ function Page() {
       toast.error("Bitte alle Pflichtfelder ausfüllen.");
       return;
     }
-    (window as Window & { fbq?: (...args: unknown[]) => void }).fbq?.("track", "Lead");
     setSubmitting(true);
     try {
       const body = new FormData();
