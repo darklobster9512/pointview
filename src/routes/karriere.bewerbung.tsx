@@ -147,7 +147,7 @@ function Page() {
               <a href="/datenschutz" className="text-primary hover:underline">Datenschutzerklärung</a> einverstanden.
             </p>
             <div className="sm:col-span-2">
-              <button type="submit" disabled={submitting} className={cn(btn.primary, "disabled:opacity-60")}>
+              <button type="submit" onClick={trackLead} disabled={submitting} className={cn(btn.primary, "disabled:opacity-60")}>
                 {submitting ? <><Loader2 className="size-5 animate-spin" /> Wird gesendet…</> : <>Bewerbung senden <Send className="size-5" /></>}
               </button>
             </div>
