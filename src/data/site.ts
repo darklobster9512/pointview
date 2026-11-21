@@ -6,6 +6,7 @@ export const company = {
   email: "kontakt@pointview.gmbh",
   phone: "040 573076460",
   phoneHref: "tel:+4940573076460",
+  showPhone: false,
   street: "Elbchaussee 485",
   city: "22587 Hamburg",
   register: "Amtsgericht Hamburg, HRB 88760",

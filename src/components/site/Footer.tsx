@@ -41,10 +41,12 @@ export function Footer() {
             <p className="font-semibold text-dark-foreground">{company.name}</p>
             <p>{company.street}</p>
             <p>{company.city}</p>
-            <p className="pt-2">
-              <a href={company.phoneHref} className="hover:text-primary">{company.phone}</a>
-            </p>
-            <p>
+            {company.showPhone ? (
+              <p className="pt-2">
+                <a href={company.phoneHref} className="hover:text-primary">{company.phone}</a>
+              </p>
+            ) : null}
+            <p className={company.showPhone ? undefined : "pt-2"}>
               <a href={`mailto:${company.email}`} className="hover:text-primary">{company.email}</a>
             </p>
           </address>
