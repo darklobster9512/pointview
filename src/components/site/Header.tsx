@@ -9,6 +9,7 @@ const navLinks = [
   { to: "/ueber-uns", label: "Über uns" },
   { to: "/team", label: "Team" },
   { to: "/karriere", label: "Karriere" },
+  { to: "/kontakt", label: "Kontakt" },
 ] as const;
 
 export function Header() {
@@ -59,7 +60,7 @@ export function Header() {
           <div className="group relative">
             <Link
               to="/leistungen"
-              className="flex items-center gap-1 text-[15px] font-semibold text-dark transition-colors hover:text-primary"
+              className="flex items-center gap-1 text-sm font-normal text-dark transition-colors hover:text-primary"
               activeProps={{ className: "text-primary" }}
             >
               Leistungen
@@ -93,17 +94,17 @@ export function Header() {
             <Link
               key={l.to}
               to={l.to}
-              className="text-[15px] font-semibold text-dark transition-colors hover:text-primary"
+              className="text-sm font-normal text-dark transition-colors hover:text-primary"
               activeProps={{ className: "text-primary" }}
             >
               {l.label}
             </Link>
           ))}
           <Link
-            to="/kontakt"
-            className="rounded-full bg-primary px-7 py-3 text-[15px] font-semibold text-primary-foreground transition-colors hover:bg-dark"
+            to="/karriere"
+            className="rounded-full bg-primary px-7 py-2.5 text-[15px] font-semibold text-primary-foreground transition-colors hover:bg-dark"
           >
-            Kontakt
+            Jobs
           </Link>
         </nav>
 

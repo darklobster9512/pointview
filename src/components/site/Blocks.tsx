@@ -10,6 +10,7 @@ const btnBase =
   "inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3 text-base font-semibold transition-colors duration-200 sm:w-auto sm:px-9";
 
 export const btn = {
+  base: btnBase,
   primary: cn(btnBase, "bg-primary text-primary-foreground hover:bg-primary/90"),
   accent: cn(btnBase, "bg-accent text-accent-foreground hover:bg-accent/90"),
   dark: cn(btnBase, "bg-dark text-dark-foreground hover:bg-dark/90"),
@@ -120,18 +121,14 @@ export function PageHero({
 export function LogoStrip({ label = "Unternehmen, die uns vertrauen" }: { label?: string }) {
   const items = [...clients, ...clients];
   return (
-    <div className="relative border-b bg-background">
+    <div className="relative bg-muted">
       <div className="container-site overflow-hidden py-6 sm:py-8">
         <p className="sr-only">{label}</p>
-        <div className="flex w-max items-center animate-[marquee_50s_linear_infinite] gap-10 sm:gap-16 [--tw-translate-x:0]">
+        <div className="flex w-max items-center animate-[marquee_50s_linear_infinite] gap-4 sm:gap-5 [--tw-translate-x:0]">
           {items.map((c, i) => (
-            <img
-              key={i}
-              src={c.logo}
-              alt={c.name}
-              loading="lazy"
-              className="h-7 w-auto max-w-[120px] shrink-0 object-contain sm:h-9 sm:max-w-[140px]"
-            />
+            <div key={i} className="flex h-20 w-36 shrink-0 items-center justify-center rounded bg-card p-4 shadow-card sm:h-24 sm:w-44">
+              <img src={c.logo} alt={c.name} loading="lazy" className="max-h-10 w-auto max-w-full object-contain" />
+            </div>
           ))}
         </div>
       </div>
@@ -181,7 +178,7 @@ export function StatsRow() {
     <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-8 lg:grid-cols-4">
       {stats.map((s) => (
         <li key={s.label} className="min-w-0 border-l-2 border-primary pl-4 sm:pl-5">
-          <p className="text-3xl font-semibold text-primary sm:text-4xl lg:text-5xl">{s.value}</p>
+          <p className="text-4xl font-normal text-primary sm:text-4xl lg:text-5xl">{s.value}</p>
           <p className="mt-1.5 text-xs text-muted-foreground sm:mt-2 sm:text-sm">{s.label}</p>
         </li>
       ))}
