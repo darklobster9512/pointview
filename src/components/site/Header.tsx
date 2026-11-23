@@ -46,11 +46,11 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 bg-background/95 backdrop-blur transition-shadow",
+        "sticky top-0 z-50 border-b bg-background transition-shadow",
         (scrolled || open) && "shadow-[0_8px_30px_-16px_oklch(0.32_0.005_260/0.25)]",
       )}
     >
-      <div className="container-site flex h-16 items-center justify-between gap-4 lg:h-20">
+      <div className="container-site flex h-16 items-center justify-between gap-4 lg:h-24">
         <Link to="/" aria-label="PointView Startseite" onClick={() => setOpen(false)} className="min-w-0">
           <Logo className="h-5 sm:h-6 lg:h-7" />
         </Link>
@@ -59,20 +59,20 @@ export function Header() {
           <div className="group relative">
             <Link
               to="/leistungen"
-              className="flex items-center gap-1 text-sm font-semibold transition-colors hover:text-primary"
+              className="flex items-center gap-1 text-[15px] font-semibold text-dark transition-colors hover:text-primary"
               activeProps={{ className: "text-primary" }}
             >
               Leistungen
-              <ChevronDown className="size-4 transition-transform group-hover:rotate-180" />
+              <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
             </Link>
             <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-4 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
-              <div className="w-80 rounded-3xl border bg-card p-3 shadow-card">
+              <div className="w-80 rounded-md border bg-card p-2 shadow-card">
                 {services.map((s) => (
                   <Link
                     key={s.slug}
                     to="/leistungen/$slug"
                     params={{ slug: s.slug }}
-                    className="flex items-start gap-3 rounded-2xl px-4 py-3 transition-colors hover:bg-muted"
+                    className="flex items-start gap-3 rounded px-4 py-3 transition-colors hover:bg-muted"
                   >
                     <span className="mt-0.5 text-xs font-bold text-primary">{s.number}</span>
                     <span>
@@ -82,7 +82,7 @@ export function Header() {
                 ))}
                 <Link
                   to="/leistungen"
-                  className="mt-1 block rounded-2xl px-4 py-3 text-sm font-semibold text-accent hover:bg-muted"
+                  className="mt-1 block rounded px-4 py-3 text-sm font-semibold text-accent hover:bg-muted"
                 >
                   Alle Leistungen →
                 </Link>
@@ -93,7 +93,7 @@ export function Header() {
             <Link
               key={l.to}
               to={l.to}
-              className="text-sm font-semibold transition-colors hover:text-primary"
+              className="text-[15px] font-semibold text-dark transition-colors hover:text-primary"
               activeProps={{ className: "text-primary" }}
             >
               {l.label}
@@ -101,7 +101,7 @@ export function Header() {
           ))}
           <Link
             to="/kontakt"
-            className="rounded-full bg-dark px-6 py-3 text-sm font-semibold text-dark-foreground transition-colors hover:bg-accent"
+            className="rounded-full bg-primary px-7 py-3 text-[15px] font-semibold text-primary-foreground transition-colors hover:bg-dark"
           >
             Kontakt
           </Link>

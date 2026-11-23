@@ -61,7 +61,7 @@ function Page() {
               />
             </div>
           </div>
-          <div className="rounded-[1.75rem] bg-card p-5 shadow-card sm:rounded-[2rem] sm:p-8 lg:p-10">
+          <div className="rounded-lg bg-card p-5 shadow-card sm:p-8 lg:p-10">
             <H2 className="text-2xl sm:text-3xl lg:text-4xl">Anfrage senden</H2>
             <p className="mt-3 text-sm text-muted-foreground">Felder mit * sind Pflichtfelder.</p>
             <div className="mt-8">

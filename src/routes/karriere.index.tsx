@@ -26,7 +26,7 @@ function Page() {
 
       <Section className="pt-0">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-          <img src="/images/workshop.jpg" alt="Workshop im Team der PointView GmbH" width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2rem]" />
+          <img src="/images/workshop.jpg" alt="Workshop im Team der PointView GmbH" width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
           <div>
             <Eyebrow>Warum PointView</Eyebrow>
             <H2>Beratung ohne Folienschlachten</H2>

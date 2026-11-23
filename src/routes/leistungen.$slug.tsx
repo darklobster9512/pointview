@@ -132,7 +132,7 @@ function Page() {
               Schildern Sie uns kurz Ihre Situation. Wir melden uns innerhalb eines Werktags und schlagen einen Termin für ein unverbindliches Erstgespräch vor.
             </p>
           </div>
-          <div className={cn("rounded-[1.75rem] bg-card p-5 shadow-card sm:rounded-[2rem] sm:p-8")}>
+          <div className={cn("rounded-lg bg-card p-5 shadow-card sm:p-8")}>
             <ContactForm />
           </div>
         </div>

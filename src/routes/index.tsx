@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import {
   btn,
-  CircuitPattern,
   CtaBanner,
   Eyebrow,
   H2,
@@ -48,42 +47,52 @@ function Index() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden text-primary-foreground">
+      <section className="relative overflow-hidden bg-dark text-primary-foreground">
         <img
           src="/images/hero.jpg"
           alt="Zwei Berater der PointView GmbH arbeiten gemeinsam am Laptop"
           width={1920}
           height={1080}
-          className="absolute inset-0 size-full object-cover object-center sm:object-right"
+          className="absolute inset-0 size-full object-cover object-center"
         />
-        <div className="absolute inset-0 gradient-hero opacity-85 mix-blend-multiply" />
-        <div className="absolute inset-0 gradient-hero opacity-40" />
-        <CircuitPattern className="hidden sm:block" />
-        <div className="container-site relative py-16 sm:py-28 lg:py-40">
-          <div className="max-w-3xl">
-            <h1 className="text-[2.25rem] font-bold leading-[1.05] tracking-tight text-balance hyphens-auto sm:text-5xl lg:text-7xl">
-              Ihr Partner für IT-Beratung und Prozessoptimierung
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/90 sm:mt-8 sm:text-lg lg:text-xl">
-              Seit {company.since} helfen wir Unternehmen, Abläufe zu verstehen, zu vereinfachen und digital zu unterstützen.
-              Herstellerneutral, praxisnah und auf messbare Ergebnisse ausgerichtet.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
-              <Link to="/kontakt" className={btn.primary}>
-                Projekt besprechen
-              </Link>
-              <Link to="/leistungen" className={btn.dark}>
-                Leistungen ansehen
-              </Link>
-            </div>
+        <div className="absolute inset-0 bg-dark/60" />
+        <div className="container-site relative flex min-h-[32rem] flex-col items-center justify-center py-20 text-center sm:min-h-[40rem] lg:min-h-[46rem]">
+          <h1 className="max-w-4xl text-[2.5rem] font-normal leading-[1.08] text-balance hyphens-auto sm:text-6xl lg:text-[5.5rem]">
+            Prozesse, die <span className="text-primary">funktionieren</span>.
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/95 sm:text-2xl">
+            IT-Beratung und Prozessoptimierung aus Hamburg – seit {company.since}.
+          </p>
+          <div className="mt-10 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
+            <Link to="/kontakt" className={btn.primary}>
+              Jetzt beraten lassen
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Logo strip overlapping */}
-      <div className="bg-background pb-4 sm:-mt-12">
-        <LogoStrip />
-      </div>
+      {/* Blue band */}
+      <section className="bg-primary text-primary-foreground">
+        <div className="container-site grid gap-6 py-12 sm:py-16 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-center lg:gap-14">
+          <div>
+            <h2 className="text-[1.75rem] font-semibold leading-tight text-balance sm:text-4xl">
+              IT- & Prozessberatung für den Mittelstand – herstellerneutral.
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-primary-foreground/90 sm:text-lg">
+              Wir analysieren, wie Ihr Unternehmen wirklich arbeitet, hinterfragen Abläufe und treffen klare Empfehlungen –
+              von der ersten Idee bis zur stabilen Umsetzung.
+            </p>
+          </div>
+          <div className="lg:justify-self-end">
+            <Link to="/leistungen" className={btn.dark}>
+              Unsere Leistungen
+              <ArrowRight className="size-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <LogoStrip />
 
       {/* Services */}
       <Section>
@@ -97,7 +106,7 @@ function Index() {
           ))}
           <Link
             to="/leistungen"
-            className="group flex h-full flex-col justify-between rounded-3xl bg-dark p-6 text-dark-foreground transition-all duration-300 hover:-translate-y-1 hover:bg-accent sm:p-8"
+            className="group flex h-full flex-col justify-between rounded-3xl bg-dark p-6 text-dark-foreground transition-colors duration-300 hover:bg-primary sm:p-8"
           >
             <ArrowRight className="size-8 text-primary" />
             <div>
@@ -137,7 +146,7 @@ function Index() {
               width={1024}
               height={768}
               loading="lazy"
-              className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2.5rem]"
+              className="aspect-[4/3] w-full rounded-lg object-cover shadow-card"
             />
             <div className="mt-4 inline-block rounded-3xl bg-card p-5 shadow-card sm:absolute sm:-bottom-6 sm:-left-6 sm:mt-0 sm:p-6">
               <p className="text-2xl font-bold text-dark sm:text-3xl">seit 2003</p>
@@ -176,7 +185,7 @@ function Index() {
               width={1024}
               height={768}
               loading="lazy"
-              className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-card sm:rounded-[2.5rem]"
+              className="aspect-[4/3] w-full rounded-lg object-cover shadow-card"
             />
           </div>
           <div className="order-1 lg:order-2">

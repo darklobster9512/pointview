@@ -60,7 +60,7 @@ function Page() {
       </Section>
 
       <Section>
-        <div className="flex flex-col gap-8 rounded-[1.75rem] bg-dark p-6 text-dark-foreground sm:rounded-[2rem] sm:p-10 lg:flex-row lg:items-center lg:justify-between lg:p-14">
+        <div className="flex flex-col gap-8 rounded-lg bg-dark p-6 text-dark-foreground sm:p-10 lg:flex-row lg:items-center lg:justify-between lg:p-14">
           <div className="max-w-2xl">
             <Eyebrow>Wir wachsen</Eyebrow>
             <h2 className="text-[1.75rem] font-bold leading-tight text-balance sm:text-4xl">Werden Sie Teil des Teams</h2>
