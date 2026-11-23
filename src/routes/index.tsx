@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Award, Building2, Handshake, MessagesSquare, Network, Repeat, Search, Settings, Workflow } from "lucide-react";
+import { Award, ChevronDown, Building2, Handshake, MessagesSquare, Network, Repeat, Search, Settings, Workflow } from "lucide-react";
 import {
   btn,
   H2,
@@ -36,30 +36,50 @@ function Index() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-dark text-primary-foreground">
         <img
-          src="/images/hero.jpg"
-          alt="Zwei Berater der PointView GmbH arbeiten gemeinsam am Laptop"
+          src="/images/hero-home.jpg"
+          alt="Modernes Büro mit Blick auf den Hamburger Hafen und die Elbphilharmonie"
           width={1920}
-          height={1080}
-          className="absolute inset-0 size-full object-cover object-center"
+          height={1088}
+          fetchPriority="high"
+          className="hero-zoom absolute inset-0 size-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-dark/60" />
-        <div className="container-site relative flex min-h-[32rem] flex-col items-center justify-center py-20 text-center sm:min-h-[40rem] lg:min-h-[46rem]">
-          <h1 className="max-w-4xl text-[2.5rem] font-normal leading-[1.08] text-balance hyphens-auto sm:text-6xl lg:text-[5.5rem]">
-            Prozesse, die <span className="text-primary">funktionieren<span className="caret-blink font-light">|</span></span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/95 sm:text-2xl">
-            IT-Beratung und Prozessoptimierung aus Hamburg – seit {company.since}.
+        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/25" />
+        <div className="container-site relative flex min-h-[36rem] flex-col items-center justify-center pb-40 pt-20 text-center sm:min-h-[90vh] sm:pb-44">
+          <p className="fade-up text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground/85 sm:text-sm">
+            IT- & Prozessberatung · Hamburg · seit {company.since}
           </p>
-          <div className="mt-10 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
+          <h1 className="fade-up mt-5 max-w-4xl text-[2.6rem] font-normal leading-[1.05] text-balance hyphens-auto [animation-delay:120ms] sm:text-6xl lg:text-[5.75rem]">
+            Prozesse, die <span className="text-primary">funktionieren</span><span className="caret-blink ml-1 inline-block w-[3px] self-center bg-primary align-middle h-[0.9em]" aria-hidden />
+          </h1>
+          <p className="fade-up mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/90 [animation-delay:240ms] sm:text-xl">
+            Wir analysieren, wie Ihr Unternehmen wirklich arbeitet – und machen Abläufe schneller, klarer und digital.
+          </p>
+          <div className="fade-up mt-10 flex w-full flex-col justify-center gap-3 [animation-delay:360ms] sm:w-auto sm:flex-row sm:gap-4">
             <Link to="/kontakt" className={btn.primary}>
               Jetzt beraten lassen
             </Link>
+            <Link to="/leistungen" className={cn(btn.base, "border-2 border-primary-foreground/80 text-primary-foreground hover:bg-primary-foreground hover:text-dark")}>
+              Unsere Leistungen
+            </Link>
           </div>
         </div>
+        <div className="absolute inset-x-0 bottom-0 border-t border-primary-foreground/15 bg-dark/50 backdrop-blur-sm">
+          <div className="container-site grid grid-cols-3 divide-x divide-primary-foreground/15 py-4 text-center sm:py-6">
+            {stats.slice(0, 3).map((s) => (
+              <div key={s.label} className="px-2">
+                <p className="text-lg font-semibold text-primary sm:text-3xl">{s.value}</p>
+                <p className="mt-1 text-[11px] leading-tight text-primary-foreground/80 sm:text-sm">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <a href="#start" aria-label="Weiter nach unten" className="absolute bottom-28 left-1/2 hidden -translate-x-1/2 animate-bounce text-primary-foreground/70 sm:bottom-32 sm:block">
+          <ChevronDown className="size-7" />
+        </a>
       </section>
 
       {/* Blue band + service slider */}
-      <section className="bg-primary text-primary-foreground">
+      <section id="start" className="bg-primary text-primary-foreground">
         <div className="container-site py-14 sm:py-20">
           <div className="max-w-3xl">
             <h2 className="text-[1.75rem] font-semibold leading-tight text-balance sm:text-4xl">
