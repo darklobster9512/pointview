@@ -18,7 +18,7 @@ export const Route = createFileRoute("/team")({
 function Page() {
   return (
     <>
-      <PageHero
+      <PageHero image="/images/team.jpg"
         breadcrumb={[{ label: "Über uns", to: "/ueber-uns" }, { label: "Team" }]}
         title="Unser Team"
         subtitle="Ein kleines, erfahrenes Team aus Hamburg. Wer bei uns ein Projekt übernimmt, bleibt vom ersten Workshop bis zum Go-live persönlich dran."

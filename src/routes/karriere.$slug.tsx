@@ -53,7 +53,7 @@ function Page() {
 
   return (
     <>
-      <PageHero
+      <PageHero image="/images/karriere.jpg"
         breadcrumb={[{ label: "Karriere", to: "/karriere" }, { label: job.title }]}
         title={job.title}
         subtitle={job.short}

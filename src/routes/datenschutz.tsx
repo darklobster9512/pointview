@@ -11,7 +11,7 @@ export const Route = createFileRoute("/datenschutz")({
 function Page() {
   return (
     <>
-      <PageHero breadcrumb={[{ label: "Datenschutz" }]} title="Datenschutzerklärung" subtitle="Informationen zur Verarbeitung personenbezogener Daten auf dieser Website." cta={null} />
+      <PageHero image="/images/rechtliches.jpg" breadcrumb={[{ label: "Datenschutz" }]} title="Datenschutzerklärung" subtitle="Informationen zur Verarbeitung personenbezogener Daten auf dieser Website." cta={null} />
       <Section className="pt-0">
         <div className="max-w-2xl space-y-6 break-words leading-relaxed sm:space-y-8">
           <div>

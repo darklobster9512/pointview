@@ -18,7 +18,7 @@ export const Route = createFileRoute("/kontakt")({
 function Page() {
   return (
     <>
-      <PageHero
+      <PageHero image="/images/kontakt.jpg"
         breadcrumb={[{ label: "Kontakt" }]}
         title="Sprechen wir über Ihre Prozesse"
         subtitle="Schreiben Sie uns, worum es geht. Wir melden uns innerhalb eines Werktags mit einem Terminvorschlag für ein unverbindliches Erstgespräch."

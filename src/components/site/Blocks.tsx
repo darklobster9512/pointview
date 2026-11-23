@@ -78,7 +78,9 @@ export function PageHero({
   title,
   subtitle,
   cta,
+  image = "/images/hero.jpg",
 }: {
+  image?: string;
   breadcrumb?: { label: string; to?: string; params?: Record<string, string> }[];
   title: string;
   subtitle: string;
@@ -87,7 +89,7 @@ export function PageHero({
   return (
     <>
       <section className="relative overflow-hidden bg-dark text-primary-foreground">
-        <img src="/images/hero.jpg" alt="" aria-hidden width={1920} height={1080} className="absolute inset-0 size-full object-cover" />
+        <img src={image} alt="" aria-hidden width={1920} height={1080} className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-dark/70" />
         <div className="container-site relative py-16 sm:py-24 lg:py-28">
           <div className="max-w-3xl">

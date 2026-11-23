@@ -34,7 +34,7 @@ const milestones = [
 function Page() {
   return (
     <>
-      <PageHero
+      <PageHero image="/images/ueber-uns.jpg"
         breadcrumb={[{ label: "Über uns" }]}
         title="Beratung mit Haltung – seit 2003 aus Hamburg"
         subtitle="Wir sind ein inhabergeführtes Beratungsunternehmen für IT, Internet und Prozessoptimierung. Klein genug für persönliche Betreuung, erfahren genug für komplexe Vorhaben."

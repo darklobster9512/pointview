@@ -98,7 +98,7 @@ function Page() {
 
   return (
     <>
-      <PageHero
+      <PageHero image="/images/bewerbung.jpg"
         breadcrumb={[{ label: "Karriere", to: "/karriere" }, { label: "Bewerbung" }]}
         title="Bewerben Sie sich in unter drei Minuten."
         subtitle="Kurze Angaben genügen. Der Lebenslauf kann später nachgereicht werden – wir melden uns zuerst mit einem Telefonat."

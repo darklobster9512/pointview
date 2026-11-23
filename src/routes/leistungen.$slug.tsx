@@ -25,7 +25,7 @@ function Page() {
 
   return (
     <>
-      <PageHero
+      <PageHero image={`/images/${({"it-beratung":"it-beratung","prozessanalyse":"prozessanalyse","prozessoptimierung":"prozessoptimierung","internet-digitalisierung":"digitalisierung","softwareauswahl":"softwareauswahl"} as Record<string,string>)[service.slug] ?? "leistungen"}.jpg`}
         breadcrumb={[{ label: "Leistungen", to: "/leistungen" }, { label: service.title }]}
         title={service.title}
         subtitle={service.subtitle}

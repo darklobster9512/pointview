@@ -23,7 +23,7 @@ const approach = [
 function Page() {
   return (
     <>
-      <PageHero
+      <PageHero image="/images/leistungen.jpg"
         breadcrumb={[{ label: "Leistungen" }]}
         title="Unsere Leistungen"
         subtitle="Von der Prozessanalyse bis zur Softwareeinführung: Wir begleiten Unternehmen dabei, Abläufe zu verstehen, zu vereinfachen und digital zu unterstützen."

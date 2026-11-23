@@ -11,7 +11,7 @@ export const Route = createFileRoute("/impressum")({
 function Page() {
   return (
     <>
-      <PageHero breadcrumb={[{ label: "Impressum" }]} title="Impressum" subtitle="Angaben gemäß § 5 DDG" cta={null} />
+      <PageHero image="/images/rechtliches.jpg" breadcrumb={[{ label: "Impressum" }]} title="Impressum" subtitle="Angaben gemäß § 5 DDG" cta={null} />
       <Section className="pt-0">
         <div className="max-w-2xl space-y-6 break-words leading-relaxed sm:space-y-8">
           <div>
