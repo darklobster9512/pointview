@@ -26,18 +26,21 @@ function Page() {
       />
 
       <Section className="pt-0">
-        <div className="grid gap-4 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-col gap-4 sm:gap-6">
           {team.map((m) => (
-            <article key={m.name} className="flex h-full flex-col rounded-3xl border border-t-4 border-t-primary bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/40 hover:border-t-primary hover:shadow-card sm:p-8">
-              <h2 className="text-xl font-bold text-dark sm:text-2xl">{m.name}</h2>
-              <p className="mt-1 text-sm font-semibold text-primary">{m.role}</p>
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">{m.text}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {m.focus.map((f) => (
-                  <span key={f} className="rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
-                    {f}
-                  </span>
-                ))}
+            <article key={m.name} className="flex flex-col items-center gap-6 rounded-lg border bg-card p-6 text-center sm:flex-row sm:items-center sm:gap-10 sm:p-8 sm:text-left">
+              <img src={m.photo} alt={m.name} width={160} height={160} loading="lazy" className="size-32 shrink-0 rounded-full border-4 border-primary object-cover sm:size-40" />
+              <div className="min-w-0 flex-1">
+                <h2 className="text-xl font-bold text-dark sm:text-2xl">{m.name}</h2>
+                <p className="mt-1 text-sm font-semibold text-primary">{m.role}</p>
+                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">{m.text}</p>
+                <div className="mt-4 flex flex-wrap justify-center gap-2 sm:justify-start">
+                  {m.focus.map((f) => (
+                    <span key={f} className="rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
+                      {f}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}

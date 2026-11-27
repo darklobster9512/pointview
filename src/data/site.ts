@@ -266,41 +266,41 @@ export type TeamMember = {
   role: string;
   text: string;
   focus: string[];
+  photo: string;
 };
 
 export const team: TeamMember[] = [
   {
     name: "Sven Howest",
+    photo: "/images/team/sven.jpg",
     role: "Geschäftsführer",
     text: "Gründer der PointView GmbH. Übersetzt technische Fragen in unternehmerische Entscheidungen und begleitet Kunden persönlich durch Analyse, Auswahl und Einführung.",
     focus: ["IT-Strategie", "Prozessoptimierung", "Softwareauswahl"],
   },
   {
     name: "Katrin Lindemann",
+    photo: "/images/team/katrin.jpg",
     role: "Senior Consultant Prozessanalyse",
     text: "Seit 2011 bei PointView. Nimmt Prozesse dort auf, wo sie gelebt werden – in Disposition, Buchhaltung und Produktion.",
     focus: ["Prozessanalyse", "Kennzahlen", "Workshops"],
   },
   {
-    name: "Jonas Petersen",
-    role: "IT-Consultant ERP & Schnittstellen",
-    text: "Kennt ERP-, CRM- und DMS-Systeme aus über 30 Einführungsprojekten und sorgt dafür, dass Daten sauber zwischen Anwendungen fließen.",
-    focus: ["ERP", "Schnittstellen", "Datenmigration"],
-  },
-  {
     name: "Merle Brandt",
+    photo: "/images/team/merle.jpg",
     role: "Consultant Digitalisierung",
     text: "Konzipiert Portale, Formulare und digitale Abläufe – immer mit Blick darauf, was Mitarbeitende und Kunden wirklich nutzen.",
     focus: ["Kundenportale", "Workflow-Automatisierung", "UX"],
   },
   {
     name: "Tobias Reimers",
+    photo: "/images/team/tobias.jpg",
     role: "Projektleiter Softwareeinführung",
     text: "Steuert Einführungsprojekte von der Anbieterauswahl bis zum Go-live und hält Zeitplan, Budget und Nerven zusammen.",
     focus: ["Projektleitung", "Vertragsprüfung", "Change Management"],
   },
   {
     name: "Lukas Krüger",
+    photo: "/images/team/lukas.jpg",
     role: "Recruiting & People",
     text: "Verantwortlich für Recruiting und Onboarding. Erster Ansprechpartner für Bewerberinnen und Bewerber – von der ersten Nachricht bis zum ersten Arbeitstag.",
     focus: ["Recruiting", "Onboarding", "Employer Branding"],
