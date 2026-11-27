@@ -29,7 +29,21 @@ function Page() {
         <div className="flex flex-col gap-4 sm:gap-6">
           {team.map((m) => (
             <article key={m.name} className="flex flex-col items-center gap-6 rounded-lg border bg-card p-6 text-center sm:flex-row sm:items-center sm:gap-10 sm:p-8 sm:text-left">
-              <img src={m.photo} alt={m.name} width={160} height={160} loading="lazy" className="size-32 shrink-0 rounded-full border-4 border-primary object-cover sm:size-40" />
+              <div className="size-32 shrink-0 overflow-hidden rounded-full border-4 border-primary sm:size-40">
+                <img
+                  src={m.photo}
+                  alt={m.name}
+                  width={160}
+                  height={160}
+                  loading="lazy"
+                  className="size-full object-cover"
+                  style={{
+                    objectPosition: m.photoPosition ?? "50% 15%",
+                    transform: m.photoZoom ? `scale(${m.photoZoom})` : undefined,
+                    transformOrigin: m.photoPosition ?? "50% 15%",
+                  }}
+                />
+              </div>
               <div className="min-w-0 flex-1">
                 <h2 className="text-xl font-bold text-dark sm:text-2xl">{m.name}</h2>
                 <p className="mt-1 text-sm font-semibold text-primary">{m.role}</p>

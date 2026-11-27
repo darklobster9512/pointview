@@ -267,12 +267,17 @@ export type TeamMember = {
   text: string;
   focus: string[];
   photo: string;
+  /** CSS object-position / transform-origin, z. B. "50% 20%" */
+  photoPosition?: string;
+  photoZoom?: number;
 };
 
 export const team: TeamMember[] = [
   {
     name: "Sven Howest",
     photo: "/images/team/sven.jpg",
+    photoPosition: "37% 38%",
+    photoZoom: 2.4,
     role: "Geschäftsführer",
     text: "Gründer der PointView GmbH. Übersetzt technische Fragen in unternehmerische Entscheidungen und begleitet Kunden persönlich durch Analyse, Auswahl und Einführung.",
     focus: ["IT-Strategie", "Prozessoptimierung", "Softwareauswahl"],
@@ -280,6 +285,8 @@ export const team: TeamMember[] = [
   {
     name: "Katrin Lindemann",
     photo: "/images/team/katrin.jpg",
+    photoPosition: "50% 40%",
+    photoZoom: 1.3,
     role: "Senior Consultant Prozessanalyse",
     text: "Seit 2011 bei PointView. Nimmt Prozesse dort auf, wo sie gelebt werden – in Disposition, Buchhaltung und Produktion.",
     focus: ["Prozessanalyse", "Kennzahlen", "Workshops"],
@@ -287,6 +294,7 @@ export const team: TeamMember[] = [
   {
     name: "Merle Brandt",
     photo: "/images/team/merle.jpg",
+    photoPosition: "50% 15%",
     role: "Consultant Digitalisierung",
     text: "Konzipiert Portale, Formulare und digitale Abläufe – immer mit Blick darauf, was Mitarbeitende und Kunden wirklich nutzen.",
     focus: ["Kundenportale", "Workflow-Automatisierung", "UX"],
@@ -294,6 +302,7 @@ export const team: TeamMember[] = [
   {
     name: "Tobias Reimers",
     photo: "/images/team/tobias.jpg",
+    photoPosition: "50% 10%",
     role: "Projektleiter Softwareeinführung",
     text: "Steuert Einführungsprojekte von der Anbieterauswahl bis zum Go-live und hält Zeitplan, Budget und Nerven zusammen.",
     focus: ["Projektleitung", "Vertragsprüfung", "Change Management"],
@@ -301,6 +310,7 @@ export const team: TeamMember[] = [
   {
     name: "Lukas Krüger",
     photo: "/images/team/lukas.jpg",
+    photoPosition: "50% 25%",
     role: "Recruiting & People",
     text: "Verantwortlich für Recruiting und Onboarding. Erster Ansprechpartner für Bewerberinnen und Bewerber – von der ersten Nachricht bis zum ersten Arbeitstag.",
     focus: ["Recruiting", "Onboarding", "Employer Branding"],
